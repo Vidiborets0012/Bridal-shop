@@ -12,6 +12,9 @@ body {
 
 .header {
   padding: 20px 0 40px;
+  font-size: 16px;
+  color: vars.$color-primary;
+  text-transform: uppercase;
 
   &__inner {
     display: flex;
@@ -28,6 +31,10 @@ body {
 
   &__lang {
     display: flex;
+
+    &--activ {
+      @extend %opensans-700;
+    }
   }
 
   &__actions {
