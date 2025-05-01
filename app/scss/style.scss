@@ -14,3 +14,47 @@ body {
 .main {
   flex: 1;
 }
+
+.container {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 20px 0 40px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__lang {
+    display: flex;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+}
+
+.logo {
+  display: inline-block;
+}
+
+.menu {
+  &__list {
+    display: flex;
+    column-gap: 30px;
+  }
+}
