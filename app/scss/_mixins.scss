@@ -1,0 +1,64 @@
+@use 'vars' as *;
+
+@mixin font-face($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url('../fonts/#{$file}.woff2') format('woff2');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin hover-after-effect(
+  $color: $color-accent,
+  $height: 2px,
+  $top-offset: 90%,
+  $transition-duration: 0.5s
+) {
+  &::after {
+    content: '';
+    position: absolute;
+    top: $top-offset;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: $height;
+    background-color: $color;
+    transition: width $transition-duration ease;
+  }
+}
+
+@mixin focus-complex(
+  $border-color: $color-accent,
+  $shadow-color: rgba($color-accent, 0.7),
+  $border-width: 3px,
+  $shadow-blur: 10px,
+  $duration: 0.5s
+) {
+  &:focus {
+    outline: transparent;
+    border: $border-width solid $border-color;
+    box-shadow: 0 0 $shadow-blur $shadow-color;
+    transition: border-color $duration ease-in-out, box-shadow $duration ease-in-out;
+  }
+
+  &:not(:focus) {
+    border-color: transparent;
+    box-shadow: none;
+    transition: border-color $duration ease-in-out, box-shadow $duration ease-in-out;
+  }
+}
+
+@mixin active-complex($active-color: $color-primary-light, $scale: 1, $duration: 0.2s) {
+  &:active {
+    background-color: $active-color;
+    transform: scale($scale);
+    transition: background-color $duration ease-in-out, transform $duration ease-in-out;
+  }
+
+  &:not(:active) {
+    background-color: transparent;
+    transition: background-color $duration ease-in-out;
+  }
+}
