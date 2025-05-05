@@ -1,6 +1,7 @@
 $color-accent: #3b2317;
 $color-primary: #513c27;
 $color-text-muted: #94897c;
+$bg-primary: #e9e1d7;
 
 %inter-400 {
   font-family: 'Inter-Regular', sans-serif;
@@ -30,4 +31,11 @@ $color-text-muted: #94897c;
 %lora-500 {
   font-family: 'Lora-Medium', serif;
   font-weight: 500;
+}
+
+%button-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
