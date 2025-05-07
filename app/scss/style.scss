@@ -198,3 +198,70 @@ body {
     border-radius: 3px;
   }
 }
+
+.new-collection {
+  background-image: url('../images/new-collection-decor.svg');
+  background-repeat: no-repeat;
+  background-position: 300px -36%;
+
+  &__inner {
+    display: flex;
+    padding: 150px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    padding: 75px 40px 0 40px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @extend %lora-400;
+    font-size: 45px;
+  }
+
+  &__text {
+    color: vars.$color-text-muted;
+  }
+
+  &__text + .new-collection__text {
+    margin-top: 25px;
+  }
+
+  &__btn {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$bg-primary;
+    padding: 10px 65px;
+    margin-top: auto;
+  }
+
+  &__img {
+    margin-top: 75px;
+  }
+
+  &__box {
+    position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+  }
+
+  &__box-img {
+    position: absolute;
+    top: 0;
+    left: -75px;
+    max-width: fit-content;
+  }
+
+  &__caption {
+    width: 290px;
+    margin-top: auto;
+    margin-bottom: 40px;
+    color: vars.$color-text-muted;
+  }
+}
