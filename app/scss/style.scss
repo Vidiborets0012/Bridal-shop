@@ -10,6 +10,15 @@ body {
   color: vars.$color-accent;
 }
 
+.promo {
+  font-size: 11px;
+  padding: 7px 0 9px;
+  text-align: center;
+  text-transform: uppercase;
+  color: vars.$color-primary;
+  background-color: vars.$bg-primary;
+}
+
 .header {
   padding: 20px 0 40px;
   font-size: 16px;
