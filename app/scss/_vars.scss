@@ -7,6 +7,8 @@ $font-family: 'OpenSans', sans-serif;
 $second-family: 'Lora', serif;
 $third-family: 'Inter', sans-serif;
 
+$border: 1px solid;
+
 $container-width: 1200px;
 $cotainer-padding-x: 10px;
 
@@ -38,4 +40,11 @@ $cotainer-padding-x: 10px;
 %inter-400 {
   font-family: $third-family;
   font-weight: 400;
+}
+
+%button-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }

@@ -82,3 +82,7 @@ body {
 
   @include active-complex($active-color: $color-primary-light, $scale: 0.95, $duration: 0.1s);
 }
+
+.visually-hidden {
+  @include visually-hidden;
+}
