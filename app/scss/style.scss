@@ -163,3 +163,38 @@ body {
     }
   }
 }
+
+.top {
+  min-height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  &__content {
+    padding: 115px 0 50px;
+    max-width: 446px;
+    margin-right: 134px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @extend %lora-400;
+    font-size: 80px;
+    line-height: 1.2;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 12px 38px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: vars.$color-accent;
+    border-radius: 3px;
+  }
+}
