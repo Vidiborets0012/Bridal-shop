@@ -10,6 +10,8 @@
 @use 'global';
 
 .header {
+  padding: 20px 0 40px;
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -21,9 +23,16 @@
     text-transform: uppercase;
   }
 
-  &__logo {
+  &__logo-inner {
     width: 100%;
     text-align: center;
+  }
+
+  &__logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 51px;
   }
 
   &__lang {
@@ -58,13 +67,6 @@
       }
     }
   }
-}
-
-.logo {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 51px;
 }
 
 .footer {
