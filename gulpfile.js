@@ -34,15 +34,27 @@ function fonts() {
 }
 
 function images() {
-  return src(['app/images/src/*.*', '!app/images/src/*.svg'])
+  const imageSources = [
+    'app/images/src/**/*.*',
+    '!app/images/src/**/*.svg',
+    '!app/images/src/sprite/**',
+  ];
+
+  const svgSources = ['app/images/src/**/*.svg', '!app/images/src/sprite/**'];
+
+  src(imageSources, { base: 'app/images/src' })
     .pipe(newer('app/images'))
     .pipe(avif({ quality: 50 }))
-    .pipe(src('app/images/src/*.*'))
+    .pipe(src(imageSources, { base: 'app/images/src' }))
     .pipe(newer('app/images'))
     .pipe(webp())
-    .pipe(src('app/images/src/*.*'))
+    .pipe(src(imageSources, { base: 'app/images/src' }))
     .pipe(newer('app/images'))
     .pipe(imagemin())
+    .pipe(dest('app/images'));
+
+  return src(svgSources, { base: 'app/images/src' })
+    .pipe(newer('app/images'))
     .pipe(dest('app/images'));
 }
 
@@ -74,8 +86,8 @@ function watching() {
     },
   });
   watch(['app/scss/*.scss'], styles);
-  watch(['app/images/src'], images);
-  watch(['app/images/sprite'], sprites);
+  watch(['app/images/src/**/*.*'], images);
+  watch(['app/images/src/sprite/*.svg'], sprites);
   watch(['app/pages/*', 'app/components/*'], pages);
   watch(['app/js/main.js'], scripts);
   watch(['app/*.html']).on('change', browserSync.reload);
@@ -91,7 +103,7 @@ function building() {
       'app/*.html',
       'app/js/main.min.js',
       'app/css/style.min.css',
-      'app/images/*.*',
+      'app/images/**/*.*',
       'app/fonts/*.woff2',
     ],
     { base: 'app' }
