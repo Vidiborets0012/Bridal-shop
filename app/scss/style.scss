@@ -37,10 +37,10 @@
 
   &__lang {
     display: flex;
+  }
 
-    &--activ {
-      @extend %opensans-700;
-    }
+  &__lang--activ {
+    @extend %opensans-700;
   }
 
   &__menu-list {
@@ -52,20 +52,20 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
+  }
 
-    &-item {
-      display: flex;
-      align-items: center;
-    }
+  &__action-item {
+    display: flex;
+    align-items: center;
+  }
 
-    &-link {
-      display: inline-flex;
+  &__actions-link {
+    display: inline-flex;
+  }
 
-      &-wrapper {
-        display: inline-flex;
-        align-items: center;
-      }
-    }
+  &__actions-link-wrapper {
+    display: inline-flex;
+    align-items: center;
   }
 }
 
