@@ -229,6 +229,62 @@ body {
   }
 }
 
+.designer {
+  padding: 150px 0 210px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  &__content {
+    max-width: 404px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+  }
+
+  &__box {
+    position: relative;
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: 40px;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 180px;
+    left: -160px;
+    width: 300px;
+    padding: 20px 18px;
+    @extend %lora-400;
+    text-align: left;
+    background-color: #fff;
+    border: 3px solid vars.$bg-primary;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 10px 93px;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$bg-primary;
+  }
+}
+
 .footer {
   font-size: 16px;
   color: vars.$color-text-muted;
