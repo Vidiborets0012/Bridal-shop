@@ -78,6 +78,111 @@
   }
 }
 
+.hero {
+  padding-bottom: 75px;
+
+  &__body {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__inner {
+    padding: 115px 134px 20px;
+  }
+
+  &__content {
+    max-width: 446px;
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @extend %lora-400;
+    font-size: 80px;
+    line-height: 1.2;
+  }
+
+  &__link {
+    padding: 12px 38px;
+  }
+}
+
+.new-collection {
+  &__inner {
+    position: relative;
+    display: flex;
+    column-gap: 20px;
+    padding-top: 75px;
+  }
+
+  &__decor-wrapper {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 42.64vw;
+    height: 60.5vh;
+    background-image: url('../images/new-collection/new-collection-decor.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+    transform: translate(-4vw, -38vh);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 6px;
+  }
+
+  &__text {
+    max-width: 403px;
+    color: $color-text-muted;
+  }
+
+  &__btn {
+    align-self: flex-start;
+    padding: 10px 65px;
+    margin-top: auto;
+  }
+
+  &__text p:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    padding-left: 20px;
+  }
+
+  &__box-img {
+    position: absolute;
+    top: -75px;
+    left: -75px;
+    max-width: fit-content;
+  }
+
+  &__caption {
+    max-width: 290px;
+    margin-top: auto;
+    margin-bottom: 40px;
+    color: $color-text-muted;
+  }
+
+  &__caption p:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
 .footer {
   font-size: 16px;
   color: $color-text-muted;
@@ -186,36 +291,5 @@
       position: absolute;
       right: -21px;
     }
-  }
-}
-
-.hero {
-  padding-bottom: 75px;
-
-  &__body {
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  &__inner {
-    padding: 115px 134px 20px;
-  }
-
-  &__content {
-    max-width: 446px;
-    margin-left: auto;
-  }
-
-  &__title {
-    margin-bottom: 60px;
-    @extend %lora-400;
-    font-size: 80px;
-    line-height: 1.2;
-  }
-
-  &__link {
-    padding: 12px 38px;
   }
 }

@@ -94,3 +94,25 @@ body {
   background-color: $color-accent;
   border-radius: 3px;
 }
+
+.button-transparent {
+  display: inline-block;
+  font-size: 16px;
+  color: $color-text-muted;
+  background-color: transparent;
+  border: $border $color-primary-light;
+}
+
+.section {
+  padding: 75px 0;
+
+  &__body {
+    padding: 0 40px;
+  }
+}
+
+.title {
+  margin-bottom: 50px;
+  @extend %lora-400;
+  font-size: 45px;
+}
