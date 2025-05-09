@@ -86,3 +86,11 @@ body {
 .visually-hidden {
   @include visually-hidden;
 }
+
+.button-dark {
+  display: inline-block;
+  text-transform: uppercase;
+  color: $color-light;
+  background-color: $color-accent;
+  border-radius: 3px;
+}

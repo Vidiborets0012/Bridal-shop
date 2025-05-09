@@ -188,3 +188,34 @@
     }
   }
 }
+
+.hero {
+  padding-bottom: 75px;
+
+  &__body {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__inner {
+    padding: 115px 134px 20px;
+  }
+
+  &__content {
+    max-width: 446px;
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @extend %lora-400;
+    font-size: 80px;
+    line-height: 1.2;
+  }
+
+  &__link {
+    padding: 12px 38px;
+  }
+}
