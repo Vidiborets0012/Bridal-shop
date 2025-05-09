@@ -9,6 +9,15 @@
 @use 'fonts';
 @use 'global';
 
+.promo {
+  font-size: 11px;
+  padding: 7px 0 9px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-primary;
+  background-color: $color-primary-light;
+}
+
 .header {
   padding: 20px 0 40px;
 
