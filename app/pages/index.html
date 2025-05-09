@@ -11,7 +11,35 @@
       <!--=include promo.partial.html  -->
       <!--=include header.partial.html  -->
 
-      <main class="main"></main>
+      <main class="main">
+        <section class="hero">
+          <div
+            class="hero__body"
+            style="
+              background-image: image-set(
+                url('/images/hero/hero-bg.avif') type('image/avif'),
+                url('/images/hero/hero-bg.webp') type('image/webp'),
+                url('/images/hero/hero-bg.jpg')
+              );
+            "
+          >
+            <div class="container">
+              <div class="hero__inner">
+                <div class="hero__content">
+                  <h1 class="hero__title">Spring 2024 collection</h1>
+                  <a
+                    class="hero__link button-dark"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >SHOP NEW ARRIVALS</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <!--=include footer.partial.html  -->
     </div>
