@@ -64,106 +64,6 @@ body {
   }
 }
 
-.footer {
-  font-size: 16px;
-  color: vars.$color-text-muted;
-
-  &__menu-list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 50px;
-    padding: 55px 0 44px;
-    border-bottom: 1px solid vars.$bg-primary;
-  }
-
-  &__menu-link {
-    border-bottom: 1px solid vars.$bg-primary;
-  }
-
-  &__elements {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 45px;
-  }
-
-  &__element-title {
-    opacity: 0.5;
-    margin-bottom: 20px;
-  }
-
-  &__element-link {
-    display: inline-flex;
-    margin-bottom: 5px;
-  }
-
-  &__social-list {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__form {
-    position: relative;
-    width: 250px;
-  }
-
-  &__form-input {
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid vars.$bg-primary;
-    color: vars.$color-text-muted;
-    padding: 1px 30px 5px 0;
-
-    &::placeholder {
-      color: vars.$color-text-muted;
-    }
-  }
-
-  &__form-btn {
-    position: absolute;
-    top: 5px;
-    right: 0;
-    @extend %button-reset;
-
-    font-size: 0;
-  }
-
-  &__bottom {
-    padding: 7px 0 9px;
-    font-size: 11px;
-    color: vars.$color-primary;
-    background-color: vars.$bg-primary;
-  }
-
-  &__bottom-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__copy {
-    padding-left: 26px;
-  }
-
-  &__bottom-list {
-    display: flex;
-    align-items: center;
-    gap: 0 37px;
-  }
-
-  &__bottom-item + .footer__bottom-item {
-    position: relative;
-
-    &::before {
-      content: '|';
-      position: absolute;
-      left: -21px;
-    }
-  }
-}
-
 .top {
   min-height: 90vh;
   background-repeat: no-repeat;
@@ -263,5 +163,168 @@ body {
     margin-top: auto;
     margin-bottom: 40px;
     color: vars.$color-text-muted;
+  }
+}
+
+.join-us {
+  background-color: vars.$bg-primary;
+  &__inner {
+    display: flex;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  &__img {
+    max-width: 540px;
+  }
+
+  &__box {
+    padding: 30px 0;
+  }
+
+  &__title {
+    margin-bottom: 13px;
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    @extend %lora-400;
+    font-size: 30px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    @extend %opensans-400;
+    color: vars.$color-text-muted;
+    border: none;
+    border-bottom: 1px solid vars.$color-text-muted;
+    background-color: transparent;
+  }
+
+  &__input + .join-us__input {
+    padding-top: 10px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 12px;
+    color: #fff;
+    background-color: vars.$color-accent;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__form-caption {
+    font-size: 11px;
+    color: vars.$color-primary;
+  }
+}
+
+.footer {
+  font-size: 16px;
+  color: vars.$color-text-muted;
+
+  &__menu-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 55px 0 44px;
+    border-bottom: 1px solid vars.$bg-primary;
+  }
+
+  &__menu-link {
+    border-bottom: 1px solid vars.$bg-primary;
+  }
+
+  &__elements {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 45px;
+  }
+
+  &__element-title {
+    opacity: 0.5;
+    margin-bottom: 20px;
+  }
+
+  &__element-link {
+    display: inline-flex;
+    margin-bottom: 5px;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__form {
+    position: relative;
+    width: 250px;
+  }
+
+  &__form-input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid vars.$bg-primary;
+    color: vars.$color-text-muted;
+    padding: 1px 30px 5px 0;
+
+    &::placeholder {
+      color: vars.$color-text-muted;
+    }
+  }
+
+  &__form-btn {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    @extend %button-reset;
+
+    font-size: 0;
+  }
+
+  &__bottom {
+    padding: 7px 0 9px;
+    font-size: 11px;
+    color: vars.$color-primary;
+    background-color: vars.$bg-primary;
+  }
+
+  &__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copy {
+    padding-left: 26px;
+  }
+
+  &__bottom-list {
+    display: flex;
+    align-items: center;
+    gap: 0 37px;
+  }
+
+  &__bottom-item + .footer__bottom-item {
+    position: relative;
+
+    &::before {
+      content: '|';
+      position: absolute;
+      left: -21px;
+    }
   }
 }
