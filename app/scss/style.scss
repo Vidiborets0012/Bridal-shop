@@ -124,17 +124,13 @@
   }
 
   &__decor {
-    position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    width: 42.64vw;
-    height: 60.5vh;
+    width: calc(512px / 1300px * 100%);
+    aspect-ratio: calc(512px / 502px);
     background-image: url('../images/new-collection/new-collection-decor.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top left;
-    transform: translate(-4vw, -38vh);
+    transform: translate(-13%, -63%);
   }
 
   &__content {

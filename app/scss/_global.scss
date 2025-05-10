@@ -115,4 +115,12 @@ body {
   margin-bottom: 50px;
   @extend %lora-400;
   font-size: 45px;
+  text-transform: uppercase;
+}
+
+.decor {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
