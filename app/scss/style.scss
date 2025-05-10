@@ -211,6 +211,7 @@ body {
   }
 
   &__btn {
+    position: relative;
     display: block;
     width: 100%;
     margin-top: 40px;
@@ -221,6 +222,7 @@ body {
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    z-index: 10;
   }
 
   &__form-caption {
@@ -230,12 +232,21 @@ body {
 }
 
 .designer {
+  position: relative;
   padding: 150px 0 210px;
 
   &__inner {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
+  }
+
+  &__decor {
+    position: absolute;
+    top: -245px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
   }
 
   &__content {
@@ -339,6 +350,70 @@ body {
       background-position: center;
       background-size: cover;
     }
+  }
+}
+
+.our-blog {
+  padding: 150px 0 100px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 280px 330px;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 0 40px;
+    background-image: url('../images/our-blog-decor.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    max-width: 400px;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+  }
+
+  &__btn-link {
+    display: inline-block;
+    padding: 10px 93px;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$bg-primary;
+  }
+
+  &__box-img {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    margin-bottom: 5px;
+    @extend %lora-400;
+    color: vars.$color-text-muted;
+  }
+
+  &__box-date {
+    @extend %opensans-300;
+    font-size: 16px;
+    color: vars.$color-primary;
+  }
+
+  &__box-right {
+    grid-row: span 2;
+    align-self: center;
+    margin-top: -90px;
+  }
+
+  &__box-bottom {
+    grid-column: span 2;
+    margin-left: auto;
   }
 }
 
