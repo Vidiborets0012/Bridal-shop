@@ -1,3 +1,4 @@
 app/components/header.partial.html
 app/components/footer.partial.html
 app/components/promo.partial.html
+app/components/join-us.partial.html

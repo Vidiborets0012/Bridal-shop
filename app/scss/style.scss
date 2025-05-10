@@ -179,6 +179,74 @@
   }
 }
 
+.join-us {
+  &__wrapper-bg {
+    background-color: $color-primary-light;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  &__img {
+    max-width: 540px;
+  }
+
+  &__content {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: $color-primary;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 0 10px 5px 0;
+    @extend %opensans-400;
+    color: $color-text-muted;
+    background-color: transparent;
+    border: none;
+    border-bottom: $border $color-text-muted;
+
+    &::placeholder {
+      @extend %opensans-400;
+      font-size: 20px;
+      color: $color-text-muted;
+    }
+  }
+
+  &__input:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  &__input:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 11px;
+    width: 100%;
+    border: none;
+    z-index: 2;
+  }
+
+  &__form-caption {
+    font-size: 11px;
+    color: $color-primary;
+  }
+}
+
 .footer {
   font-size: 16px;
   color: $color-text-muted;
