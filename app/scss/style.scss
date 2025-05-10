@@ -285,6 +285,63 @@ body {
   }
 }
 
+.our-advantages {
+  background-color: vars.$bg-primary;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 64px 130px 34px 0;
+    margin-left: auto;
+  }
+
+  &__decor {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    column-count: 2;
+    column-gap: 80px;
+  }
+
+  &__item {
+    padding-left: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 22px;
+      left: 0;
+      background-image: url('../images/our-advantages-icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
 .footer {
   font-size: 16px;
   color: vars.$color-text-muted;
