@@ -305,6 +305,63 @@
   }
 }
 
+.our-advantages {
+  &.section {
+    padding-top: 158px;
+  }
+
+  &__wrapper {
+    background-color: $color-primary-light;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    column-gap: 70px;
+  }
+
+  &__decor {
+    bottom: 0;
+    right: -40px;
+    width: calc(326px / 1120px * 100%);
+    aspect-ratio: calc(326px / 548px);
+    background-image: url('../images/our-advantages/our-advantages-decor.svg');
+  }
+
+  &__img {
+    margin-top: -83px;
+  }
+
+  &__content {
+    padding: 64px 0;
+  }
+
+  &__list {
+    column-count: 2;
+    column-gap: 80px;
+    margin-bottom: -30px;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 50px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 22px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('../images/our-advantages/our-advantages-icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
 .footer {
   font-size: 16px;
   color: $color-text-muted;
