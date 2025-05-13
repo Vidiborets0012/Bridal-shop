@@ -48,7 +48,7 @@
     display: flex;
   }
 
-  &__lang--activ {
+  &__lang-item--activ {
     @extend %opensans-700;
   }
 
@@ -83,6 +83,11 @@
 
   &__body {
     min-height: 100vh;
+    background-image: image-set(
+      url('../images/hero/hero-bg.avif') type('image/avif'),
+      url('../images/hero/hero-bg.webp') type('image/webp'),
+      url('../images/hero/hero-bg.jpg')
+    );
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
