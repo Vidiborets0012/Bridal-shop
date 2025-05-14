@@ -30,6 +30,15 @@ body {
   padding-inline: $cotainer-padding-x;
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid $color-accent;
+  outline-offset: 2px;
+}
+
 .link {
   position: relative;
   border-radius: 4px;

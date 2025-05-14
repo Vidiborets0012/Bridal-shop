@@ -1,4 +1,5 @@
 @use 'vars' as *;
+@use 'media' as *;
 
 @mixin font-face($name, $file, $weight: normal, $style: normal) {
   @font-face {
@@ -13,6 +14,64 @@
 @mixin opensans-400 {
   font-family: $font-family;
   font-weight: 400;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin pseudo-button(
+  $text-color: $color-primary,
+  $hover-text-color: $color-accent,
+  $shadow-color: $color-accent,
+  $transform-y: -2px,
+  $transform-scale: 1,
+  $transform-scale-down: null,
+  $background-color: null,
+  $border: null
+) {
+  display: inline-block;
+  border-radius: 4px;
+  color: $text-color;
+  transition: transform 0.25s ease, box-shadow 0.3s ease, color 0.3s ease, outline 0.2s ease,
+    background-color 0.3s ease;
+
+  @include hover {
+    color: $hover-text-color;
+    background-color: $background-color;
+    box-shadow: 1px 1px 2px rgba($shadow-color, 0.2), 3px 3px 6px rgba($shadow-color, 0.1),
+      4px 4px 8px rgba($shadow-color, 0.05);
+    transform: translateY($transform-y) scale($transform-scale);
+  }
+
+  &:focus-visible {
+    color: $hover-text-color;
+    background-color: $background-color;
+    box-shadow: 1px 1px 2px rgba($shadow-color, 0.2), 3px 3px 6px rgba($shadow-color, 0.1);
+    transform: translateY($transform-y) scale($transform-scale);
+  }
+
+  &:active {
+    color: $color-primary;
+    background-color: $background-color;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateY(0) scale($transform-scale-down);
+  }
+
+  svg {
+    fill: currentColor;
+    transition: fill 0.3s ease;
+  }
 }
 
 @mixin hover-after-effect(
@@ -66,18 +125,4 @@
     background-color: transparent;
     transition: background-color $duration ease-in-out;
   }
-}
-
-@mixin visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
