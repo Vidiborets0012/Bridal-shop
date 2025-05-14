@@ -38,10 +38,11 @@
   $transform-scale: 1,
   $transform-scale-down: null,
   $background-color: null,
-  $border: null
+  $border: null,
+  $border-radius: 4px
 ) {
-  display: inline-block;
-  border-radius: 4px;
+  display: inline-flex;
+  border-radius: $border-radius;
   color: $text-color;
   transition: transform 0.25s ease, box-shadow 0.3s ease, color 0.3s ease, outline 0.2s ease,
     background-color 0.3s ease;

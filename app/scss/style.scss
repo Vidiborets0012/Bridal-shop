@@ -18,46 +18,7 @@
   background-color: $color-primary-light;
 
   &__link {
-    border: 1px solid transparent;
-    border-radius: 5px;
-    transition: color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
-
-    @include hover {
-      color: $color-accent;
-      box-shadow: 2px 2px 4px rgba(59, 35, 23, 0.2), 4px 4px 8px rgba(59, 35, 23, 0.2),
-        6px 6px 12px rgba(59, 35, 23, 0.2);
-      transform: translateY(-2px);
-    }
-
-    &:focus {
-      outline: 1px solid transparent;
-      box-shadow: 2px 2px 4px rgba(59, 35, 23, 0.2), 4px 4px 8px rgba(59, 35, 23, 0.2),
-        6px 6px 12px rgba(59, 35, 23, 0.2);
-      transform: translateY(-2px);
-    }
-
-    &:not(:focus) {
-      color: $color-primary;
-      outline: none;
-      box-shadow: none;
-      transform: translateY(0px);
-      transition: color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
-    }
-
-    &:focus-visible {
-      outline: 1px solid $color-accent;
-      outline-offset: 1px;
-    }
-
-    &:active {
-      box-shadow: 1px 1px 2px rgba(59, 35, 23, 0.2);
-      transform: translateY(0);
-    }
-
-    &:not(:active) {
-      box-shadow: none;
-      transition: box-shadow 0.2s ease;
-    }
+    @include pseudo-button;
   }
 }
 
@@ -85,6 +46,8 @@
     justify-content: center;
     align-items: center;
     height: 51px;
+
+    @include pseudo-button;
   }
 
   &__lang {
@@ -95,9 +58,17 @@
     @extend %opensans-700;
   }
 
+  &__lang-link {
+    @include pseudo-button;
+  }
+
   &__menu-list {
     display: flex;
     column-gap: 30px;
+  }
+
+  &__menu-link {
+    @include pseudo-button;
   }
 
   &__actions {
@@ -113,13 +84,18 @@
 
   &__actions-link {
     display: inline-flex;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    align-items: center;
+    font-size: 0;
+    color: $color-primary;
+    background-color: transparent;
 
-    @include hover {
-      border-color: $color-accent;
-      background-color: rgba($color-accent, 0.1);
-    }
+    @include pseudo-button(
+      $hover-text-color: $color-light,
+      $background-color: $color-primary,
+      $transform-y: 0,
+      $transform-scale: 1.25,
+      $transform-scale-down: 0.9
+    );
   }
 
   &__actions-link-wrapper {
@@ -161,6 +137,12 @@
 
   &__link {
     padding: 12px 38px;
+
+    @include pseudo-button(
+      $text-color: $color-light,
+      $background-color: $color-light,
+      $border-radius: 0
+    );
   }
 }
 
@@ -203,6 +185,13 @@
     align-self: flex-start;
     padding: 10px 65px;
     margin-top: auto;
+
+    @include pseudo-button(
+      $text-color: $color-text-muted,
+      $hover-text-color: $color-light,
+      $background-color: $color-accent,
+      $border-radius: 0
+    );
   }
 
   &__text p:not(:last-child) {
@@ -263,6 +252,7 @@
   }
 
   &__input {
+    position: relative;
     display: block;
     width: 100%;
     padding: 0 10px 5px 0;
@@ -271,11 +261,29 @@
     background-color: transparent;
     border: none;
     border-bottom: $border $color-text-muted;
+    z-index: 5;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform box-shadow 0.3s ease;
 
     &::placeholder {
       @extend %opensans-400;
       font-size: 20px;
       color: $color-text-muted;
+    }
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-color: $color-accent;
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 
@@ -289,11 +297,19 @@
 
   &__btn {
     position: relative;
+    justify-content: center;
     margin-bottom: 20px;
     padding: 11px;
     width: 100%;
     border: none;
     z-index: 2;
+    cursor: pointer;
+
+    @include pseudo-button(
+      $text-color: $color-light,
+      $background-color: $color-light,
+      $border-radius: 0
+    );
   }
 
   &__form-caption {
@@ -357,6 +373,13 @@
 
   &__link {
     padding: 10px 93px;
+
+    @include pseudo-button(
+      $text-color: $color-text-muted,
+      $hover-text-color: $color-light,
+      $background-color: $color-accent,
+      $border-radius: 0
+    );
   }
 }
 
@@ -452,6 +475,13 @@
 
   &__link {
     padding: 10px 93px;
+
+    @include pseudo-button(
+      $text-color: $color-text-muted,
+      $hover-text-color: $color-light,
+      $background-color: $color-accent,
+      $border-radius: 0
+    );
   }
 
   &__box-img {
@@ -462,6 +492,8 @@
     margin-bottom: 5px;
     @extend %lora-400;
     color: $color-text-muted;
+
+    @include pseudo-button;
   }
 
   &__box-date {
@@ -501,6 +533,12 @@
 
   &__menu-link {
     border-bottom: $border $color-primary-light;
+
+    @include pseudo-button;
+  }
+
+  &__menu-link--border {
+    border: none;
   }
 
   &__elements {
@@ -532,6 +570,12 @@
     column-gap: 10px;
   }
 
+  &__social-link {
+    font-size: 0;
+
+    @include pseudo-button($transform-scale: 1.25, $transform-scale-down: 0.9);
+  }
+
   &__form {
     position: relative;
     width: 250px;
@@ -544,9 +588,26 @@
     border-bottom: 1px solid $color-primary-light;
     color: $color-text-muted;
     padding: 1px 30px 5px 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform box-shadow 0.3s ease;
 
     &::placeholder {
       color: $color-text-muted;
+    }
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-color: $color-accent;
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 
@@ -556,6 +617,9 @@
     right: 0;
     display: inline-flex;
     @extend %button-reset;
+    font-size: 0;
+
+    @include pseudo-button($transform-scale: 1.25, $transform-scale-down: 0.9);
   }
 
   &__bottom {
