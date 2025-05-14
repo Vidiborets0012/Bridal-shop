@@ -15,7 +15,10 @@ const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
 
 function sprites() {
-  return src('app/images/sprite/*.svg').pipe(svgstore()).pipe(dest('app/images'));
+  return src('app/images/sprite/*.svg')
+    .pipe(newer('app/images/sprite.svg'))
+    .pipe(svgstore())
+    .pipe(dest('app/images'));
 }
 
 function pages() {
