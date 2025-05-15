@@ -516,3 +516,66 @@ body {
     }
   }
 }
+
+.appointment {
+  padding: 10px 0 128px;
+  background-image: url('../images/appointment-decor.svg');
+  background-repeat: no-repeat;
+  background-position: top 105px center;
+
+  &__title {
+    text-align: center;
+    font-size: 45px;
+    @extend %lora-400;
+    margin-bottom: 77px;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &__form-title {
+    font-size: 30px;
+    @extend %lora-400;
+    margin-bottom: 80px;
+  }
+
+  &__form-text {
+    @extend %opensans-700;
+    color: vars.$color-text-muted;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid vars.$color-text-muted;
+    color: vars.$color-text-muted;
+    background-color: transparent;
+
+    &::placeholder {
+      color: vars.$color-text-muted;
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    padding: 12px;
+    color: #fff;
+    background-color: vars.$color-accent;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
