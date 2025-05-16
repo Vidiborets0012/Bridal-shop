@@ -579,3 +579,15 @@ body {
     cursor: pointer;
   }
 }
+
+.collections-top {
+  min-height: 100vh;
+  background-image: image-set(
+    url('/images/collections-bg.avif') type('image/avif'),
+    url('/images/collections-bg.webp') type('image/webp'),
+    url('/images/collections-bg.jpg')
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
