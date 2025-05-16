@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  padding: 20px 0 40px;
+  padding: 20px 0 30px;
   font-size: 16px;
   color: vars.$color-primary;
   text-transform: uppercase;
@@ -30,6 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 10px;
   }
 
   &__logo {
@@ -590,4 +591,30 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.collection-main {
+  .breadcrumbs {
+    padding-top: 50px;
+  }
+}
+
+.breadcrumbs {
+  padding: 30px 0 80px;
+  &__list {
+    display: flex;
+    gap: 14px;
+    font-size: 16px;
+    color: vars.$color-text-muted;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item + .breadcrumbs__item::before {
+    content: '/';
+    position: absolute;
+    left: -9px;
+  }
 }
