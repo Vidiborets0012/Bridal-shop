@@ -622,6 +622,17 @@ body {
 .collections {
   padding-bottom: 100px;
 
+  &__container {
+    position: relative;
+  }
+
+  &__decor {
+    position: absolute;
+    top: -225px;
+    right: -30px;
+    z-index: 5;
+  }
+
   &__title {
     margin-bottom: 50px;
     text-align: center;
