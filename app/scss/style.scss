@@ -618,3 +618,100 @@ body {
     left: -9px;
   }
 }
+
+.collections {
+  padding-bottom: 100px;
+
+  &__title {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 45px;
+    @extend %lora-400;
+    text-transform: uppercase;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-areas:
+      'aa ab ba bb'
+      'cc cc ca cb'
+      'cc cc da db'
+      'ea eb ee ee'
+      'fa fb ee ee';
+    gap: 40px;
+  }
+
+  &__item {
+    position: relative;
+    &:nth-child(1) {
+      grid-area: aa;
+    }
+    &:nth-child(2) {
+      grid-area: ab;
+    }
+    &:nth-child(3) {
+      grid-area: ba;
+    }
+    &:nth-child(4) {
+      grid-area: bb;
+    }
+    &:nth-child(5) {
+      grid-area: cc;
+      height: fit-content;
+    }
+    &:nth-child(6) {
+      grid-area: ca;
+    }
+    &:nth-child(7) {
+      grid-area: cb;
+    }
+    &:nth-child(8) {
+      grid-area: da;
+    }
+    &:nth-child(9) {
+      grid-area: db;
+    }
+    &:nth-child(10) {
+      grid-area: ea;
+      margin-top: -120px;
+      height: fit-content;
+    }
+    &:nth-child(11) {
+      grid-area: eb;
+      margin-top: -120px;
+      height: fit-content;
+    }
+    &:nth-child(12) {
+      grid-area: ee;
+      height: fit-content;
+    }
+    &:nth-child(13) {
+      grid-area: fa;
+    }
+    &:nth-child(14) {
+      grid-area: fb;
+    }
+  }
+
+  &__item-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+    @extend %lora-400;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: vars.$color-accent;
+  }
+
+  &__like {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+}
