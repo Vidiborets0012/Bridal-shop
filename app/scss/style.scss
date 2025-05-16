@@ -715,3 +715,44 @@ body {
     background-color: transparent;
   }
 }
+
+.pagination {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  color: vars.$color-primary;
+
+  &__list {
+    display: flex;
+    gap: 2px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 8px;
+  }
+
+  &__link--active {
+    color: #fff;
+    background-color: vars.$color-text-muted;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+  }
+
+  &__arrow-disable {
+    display: none;
+  }
+}
