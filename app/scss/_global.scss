@@ -184,3 +184,20 @@ body {
     left: -9px;
   }
 }
+
+.button-like {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  padding: 0;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include pseudo-button(
+    $text-color: $color-primary-light,
+    $shadow-color: $color-light,
+    $background-color: rgba($color-primary-light, 0.4)
+  );
+}
