@@ -681,7 +681,7 @@
   }
 
   .breadcrumbs {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 
     &__link {
       @include pseudo-button;
@@ -690,6 +690,16 @@
 
   &__body {
     position: relative;
+  }
+
+  &__decor {
+    top: 0;
+    right: 0;
+    width: calc(386px / 1200px * 100%);
+    aspect-ratio: calc(386px / 361px);
+    background-image: url('../images/collections/collections-decor.svg');
+    transform: translate(10%, -30%);
+    z-index: 1;
   }
 
   &__title {
