@@ -163,3 +163,24 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+.breadcrumbs {
+  margin-bottom: 80px;
+
+  &__list {
+    display: flex;
+    gap: 14px;
+    font-size: 16px;
+    color: $color-text-muted;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:not(:first-child)::before {
+    content: '/';
+    position: absolute;
+    left: -9px;
+  }
+}
