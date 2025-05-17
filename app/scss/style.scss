@@ -655,3 +655,61 @@
     }
   }
 }
+
+.appointment {
+  padding: 20px 0 128px;
+
+  &__body {
+    position: relative;
+    padding: 0 40px;
+  }
+
+  &__title {
+    margin-bottom: 77px;
+    text-align: center;
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+
+  &__decor {
+    top: 0;
+    left: 50%;
+    width: calc(294px / 1105px * 100%);
+    aspect-ratio: calc(294px / 285px);
+    background-image: url('../images/appointment/appointment-decor.svg');
+    transform: translate(-50%, 27%);
+    z-index: -1;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @include form-input-style($gap-after-last: auto);
+  }
+
+  &__form-title {
+    margin-bottom: 80px;
+    @extend %lora-400;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+
+  &__form-text {
+    margin-bottom: 30px;
+    @extend %opensans-700;
+    color: $color-text-muted;
+  }
+
+  &__form-btn {
+    @extend %button-reset;
+    padding: 12px;
+    @include pseudo-button($text-color: $color-light, $background-color: $color-light);
+  }
+}
