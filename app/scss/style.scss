@@ -663,3 +663,45 @@
     @include pseudo-button($text-color: $color-light, $background-color: $color-light);
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  color: $color-primary;
+
+  &__list {
+    display: flex;
+    gap: 2px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 8px;
+  }
+
+  &__link--active {
+    color: #fff;
+    background-color: $color-text-muted;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+
+    @include pseudo-button($display: flex);
+  }
+
+  &__arrow-disable {
+    display: none;
+  }
+}

@@ -39,9 +39,10 @@
   $transform-scale-down: null,
   $background-color: null,
   $border: null,
-  $border-radius: 4px
+  $border-radius: 4px,
+  $display: inline-block
 ) {
-  display: inline-flex;
+  display: $display;
   border-radius: $border-radius;
   color: $text-color;
   transition: transform 0.25s ease, box-shadow 0.3s ease, color 0.3s ease, outline 0.2s ease,
