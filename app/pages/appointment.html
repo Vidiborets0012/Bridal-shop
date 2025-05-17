@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxurious Bridal Haven</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--=include promo.partial.html  -->
+      <!--=include header.partial.html  -->
+
+      <main class="main">
+        <section class="appointment">
+          <div class="container">
+            <div class="appointment__body">
+              <h1 class="visually-hidden">Make a bridal appointment at Luxurious Bridal Haven</h1>
+              <h2 class="appointment__title" id="appointment-title">BOOK AN APPOINTMENT</h2>
+              <div class="appointment__inner">
+                <div class="appointment__decor decor"></div>
+                <form
+                  class="appointment__form"
+                  name="contact-information"
+                  autocomplete="off"
+                  novalidate
+                  aria-labelledby="appointment-title"
+                >
+                  <p class="appointment__form-title">CONTACT INFORMATION</p>
+                  <p class="appointment__form-text">Fill in your contact details</p>
+
+                  <label class="visually-hidden" for="user-first-name">First name</label>
+                  <input
+                    class="appointment__form-input"
+                    id="user-first-name"
+                    name="user-first-name"
+                    type="text"
+                    placeholder="First name"
+                    aria-label="First name"
+                  />
+
+                  <label class="visually-hidden" for="user-last-name">Last name</label>
+                  <input
+                    class="appointment__form-input"
+                    id="user-last-name"
+                    name="user-last-name"
+                    type="text"
+                    placeholder="Last name"
+                    aria-label="Last name"
+                  />
+
+                  <label class="visually-hidden" for="user-email">Email</label>
+                  <input
+                    class="appointment__form-input"
+                    id="user-email"
+                    name="user-email"
+                    type="email"
+                    placeholder="Email"
+                    aria-label="Email"
+                  />
+
+                  <label class="visually-hidden" for="user-mobile">Mobile</label>
+                  <input
+                    class="appointment__form-input"
+                    id="user-mobile"
+                    name="user-mobile"
+                    type="tel"
+                    placeholder="Mobile"
+                    aria-label="Mobile"
+                  />
+
+                  <button class="appointment__form-btn button-dark" type="submit">SEND</button>
+                </form>
+                <picture>
+                  <source srcset="images/appointment/appointment.avif" type="image/avif" />
+                  <source srcset="images/appointment/appointment.webp" type="image/webp" />
+                  <img
+                    src="images/appointment/appointment.jpg"
+                    width="540"
+                    height="689"
+                    loading="lazy"
+                    alt="Photo of an elegant woman with blond hair in a white dress with a corset, puffed sleeves and a long train, standing near an old door with stucco molding"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!--=include footer.partial.html  -->
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
