@@ -200,4 +200,12 @@ body {
     $shadow-color: $color-light,
     $background-color: rgba($color-primary-light, 0.4)
   );
+
+  &--color {
+    @include pseudo-button(
+      $text-color: $color-primary,
+      $shadow-color: $color-accent,
+      $background-color: rgba($color-primary-light, 0.4)
+    );
+  }
 }
