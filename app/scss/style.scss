@@ -1,6 +1,7 @@
 @use 'reset';
 @use 'vars';
 @use 'fonts';
+@use '../../node_modules/swiper/swiper-bundle.css';
 @use 'global';
 
 body {
@@ -936,5 +937,71 @@ body {
 
   &__arrow-disable {
     display: none;
+  }
+}
+
+.accessories {
+  margin-bottom: 90px;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__decor {
+    position: absolute;
+    right: 53px;
+    top: -100px;
+  }
+
+  &__title {
+    max-width: 890px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    @extend %lora-400;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid vars.$bg-primary;
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  &__slide {
+    text-align: center;
+  }
+
+  &__slide-img {
+    margin-bottom: 20px;
+  }
+
+  &__slide-title {
+    margin-bottom: 10px;
+  }
+
+  &__slide-price {
+    @extend %opensans-700;
+  }
+
+  &__arrow {
+    position: absolute;
+    cursor: pointer;
+    top: 35%;
+    z-index: 10;
+  }
+
+  &__arrow-prev {
+    left: 7px;
+  }
+
+  &__arrow-next {
+    right: 7px;
   }
 }
