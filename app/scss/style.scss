@@ -7,6 +7,7 @@
 @use 'media' as *;
 @use 'reset';
 @use 'fonts';
+@use '../../node_modules/swiper/swiper-bundle.css';
 @use 'global';
 
 .promo {
@@ -925,6 +926,85 @@
     flex: 1 1 100%;
     font-size: 20px;
     text-transform: uppercase;
+  }
+}
+
+.accessories {
+  padding: 75px 0 90px;
+
+  &__decor-wrapper {
+    position: relative;
+  }
+
+  &__decor {
+    bottom: 0;
+    right: 0;
+    width: calc(241px / 1200px * 100%);
+    aspect-ratio: calc(241px / 619px);
+    background-image: url('../images/accessories/accessories-decor.svg');
+    transform: translate(-27%, -13%);
+    z-index: 2;
+  }
+
+  &__header {
+    max-width: 890px;
+    margin: 0 auto 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid $color-primary-light;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    --swiper-theme-color: $color-primary;
+
+    position: relative;
+    max-width: 968px;
+    margin: 0 auto;
+  }
+
+  &__slider-button {
+    position: absolute;
+    top: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+    cursor: pointer;
+
+    @include pseudo-button($display: flex, $border-radius: 50%);
+  }
+
+  &__slider-button--prev {
+    left: 0;
+  }
+
+  &__slider-button--next {
+    right: 0;
+  }
+
+  &__slider {
+    max-width: 890px;
+    text-align: center;
+  }
+
+  &__slide-picture {
+    margin-bottom: 20px;
+  }
+
+  &__slide-title {
+    margin-bottom: 10px;
+  }
+
+  &__slide-price {
+    @extend %opensans-700;
   }
 }
 
