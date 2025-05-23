@@ -11,7 +11,150 @@
       <!--=include promo.partial.html  -->
       <!--=include header.partial.html  -->
 
-      <main class="main"></main>
+      <main class="main">
+        <div class="container">
+          <!--=include breadcrumbs.partial.html  -->
+        </div>
+
+        <section class="product">
+          <div class="container">
+            <h1 class="visually-hidden">Luxurious Bridal Haven collections</h1>
+
+            <div class="product__inner">
+              <div class="product__media">
+                <div class="product__media-small">
+                  <picture class="product__media-picture">
+                    <source srcset="images/product/product-1.avif" type="image/avif" />
+                    <source srcset="images/product/product-1.webp" type="image/webp" />
+                    <img
+                      src="images/product/product-1.jpg"
+                      alt="Front view of Naomi dress"
+                      width="219"
+                      height="369"
+                      loading="lazy"
+                    />
+                  </picture>
+
+                  <picture class="product__media-picture">
+                    <source srcset="images/product/product-3.avif" type="image/avif" />
+                    <source srcset="images/product/product-3.webp" type="image/webp" />
+                    <img
+                      src="images/product/product-3.jpg"
+                      alt="Back view of Naomi dress"
+                      width="219"
+                      height="369"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                <picture class="product__media-picture">
+                  <source srcset="images/product/product-2.avif" type="image/avif" />
+                  <source srcset="images/product/product-2.webp" type="image/webp" />
+                  <img
+                    src="images/product/product-2.jpg"
+                    alt="Back view of Naomi dress"
+                    width="483"
+                    height="757"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="product__info">
+                <h2 class="product__title">Naomi</h2>
+                <div class="product__price">
+                  <p>€ 2,600</p>
+                </div>
+                <div class="product__collection">
+                  <p class="product__subtitle">Collection</p>
+                  <a
+                    class="product__collection-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Iconic Collection</a
+                  >
+                </div>
+                <fieldset class="product__fieldset">
+                  <legend class="product__subtitle">Color</legend>
+                  <label class="product__label product__label--radio"
+                    ><input class="product__input" type="radio" name="color" value="white" />
+                    <span class="product__label-mark product__label-mark--radio"></span>White
+                  </label>
+                  <label class="product__label product__label--radio"
+                    ><input class="product__input" type="radio" name="color" value="ivory" />
+                    <span class="product__label-mark product__label-mark--radio"></span>Ivory
+                  </label>
+                </fieldset>
+                <div class="product__description">
+                  <p>
+                    The dress has a principled satin corset that harks back to ancient times when
+                    beauty was defined by luxurious fabrics and exquisite tailoring.
+                  </p>
+                  <p>
+                    Naomi catches the eye with its intricate embroidered lace, adding a unique charm
+                    and sparkle to the dress. Its light and airy skirt is made of the finest
+                    materials, creating an effect of lightness and grace with every movement of the
+                    bride. The "Naomi" dress will perfectly accentuate the figure and adorn the
+                    bride's look on her special day.
+                  </p>
+                </div>
+
+                <fieldset class="product__fieldset">
+                  <legend class="product__subtitle">Size</legend>
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="XS" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span>XS</label
+                  >
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="S" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span>S</label
+                  >
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="M" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span>M</label
+                  >
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="L" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span>L</label
+                  >
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="XL" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span>XL</label
+                  >
+                  <label class="product__label product__label--checkbox"
+                    ><input class="product__input" type="checkbox" name="size" value="XXL" />
+                    <span class="product__label-mark product__label-mark--checkbox"></span
+                    >XXL</label
+                  >
+                </fieldset>
+
+                <div class="product__actions">
+                  <button class="product__btn" type="button" aria-label="move to the size guide">
+                    <svg width="17" height="16">
+                      <use xlink:href="images/sprite.svg#size"></use>
+                    </svg>
+                    Size guide
+                  </button>
+                  <button class="product__btn" type="button" aria-label="add to favorites">
+                    <svg width="16" height="16">
+                      <use xlink:href="images/sprite.svg#favorites"></use>
+                    </svg>
+                    Favorites
+                  </button>
+                  <button
+                    class="product__btn product__btn--addtobag"
+                    type="button"
+                    aria-label="add to cart"
+                  >
+                    ADD TO BAG
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <!--=include footer.partial.html  -->
     </div>
