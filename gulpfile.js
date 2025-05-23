@@ -14,6 +14,8 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
 
+const merge = require('merge-stream');
+
 function sprites() {
   return src('app/images/sprite/*.svg').pipe(svgstore()).pipe(dest('app/images'));
 }
@@ -42,7 +44,7 @@ function images() {
 
   const svgSources = ['app/images/src/**/*.svg', '!app/images/src/sprite/**'];
 
-  src(imageSources, { base: 'app/images/src' })
+  const imagesPipeline = src(imageSources, { base: 'app/images/src' })
     .pipe(newer('app/images'))
     .pipe(avif({ quality: 50 }))
     .pipe(src(imageSources, { base: 'app/images/src' }))
@@ -53,20 +55,18 @@ function images() {
     .pipe(imagemin())
     .pipe(dest('app/images'));
 
-  return src(svgSources, { base: 'app/images/src' })
+  const svgPipeline = src(svgSources, { base: 'app/images/src' })
     .pipe(newer('app/images'))
     .pipe(dest('app/images'));
+
+  return merge(imagesPipeline, svgPipeline);
 }
 
 function styles() {
   return src('app/scss/style.scss')
-    .pipe(
-      autoprefixer({
-        overrideBrowserlist: ['last 10 versions'],
-      })
-    )
-    .pipe(concat('style.min.css'))
     .pipe(scss({ style: 'compressed' }))
+    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], cascade: false }))
+    .pipe(concat('style.min.css'))
     .pipe(dest('app/css'))
     .pipe(browserSync.stream());
 }
@@ -87,7 +87,7 @@ function watching() {
   });
   watch(['app/scss/*.scss'], styles);
   watch(['app/images/src/**/*.*'], images);
-  watch(['app/images/src/sprite/*.svg'], sprites);
+  watch(['app/images/sprite/*.svg'], sprites);
   watch(['app/pages/*', 'app/components/*'], pages);
   watch(['app/js/main.js'], scripts);
   watch(['app/*.html']).on('change', browserSync.reload);
@@ -120,5 +120,5 @@ exports.pages = pages;
 exports.building = building;
 exports.cleanDist = cleanDist;
 
-exports.default = parallel(styles, images, sprites, scripts, pages, watching);
+exports.default = series(parallel(styles, images, sprites, scripts, pages), watching);
 exports.build = series(cleanDist, building);
