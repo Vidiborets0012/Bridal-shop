@@ -183,6 +183,10 @@ body {
     position: absolute;
     left: -9px;
   }
+
+  &__link {
+    @include pseudo-button;
+  }
 }
 
 .button-like {

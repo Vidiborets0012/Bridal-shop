@@ -749,6 +749,185 @@
   }
 }
 
+.product {
+  padding-bottom: 75px;
+
+  &__inner {
+    display: flex;
+    column-gap: 40px;
+    padding-left: 40px;
+  }
+
+  &__media {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__media img {
+    height: auto;
+  }
+
+  &__media-small {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+    max-width: 398px;
+    font-size: 16px;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    @extend %opensans-700;
+    font-size: 25px;
+    color: $color-primary;
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+    @extend %opensans-700;
+    text-transform: uppercase;
+  }
+
+  &__collection-link {
+    @extend %opensans-400;
+    text-transform: uppercase;
+
+    @include pseudo-button;
+  }
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    @extend %opensans-400;
+    line-height: 1.38;
+    text-transform: uppercase;
+  }
+
+  &__label--radio {
+    padding-left: 26px;
+  }
+
+  &__label--radio:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__label--checkbox {
+    padding-left: 20px;
+  }
+
+  &__label--checkbox:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__label-mark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border: 1px solid $color-primary;
+  }
+
+  &__label-mark--radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+
+  &__label-mark--checkbox {
+    width: 15px;
+    height: 15px;
+    border-radius: 1px;
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .product__label-mark--checkbox::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 9px;
+      height: 9px;
+      background-color: $color-primary;
+      border-radius: 1px;
+      transform: translate(-50%, -50%);
+    }
+
+    &:checked + .product__label-mark--radio::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: $color-primary;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__description p:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 48%;
+    gap: 10px;
+    padding: 9px;
+    line-height: 1.38;
+
+    color: $color-text-muted;
+    background-color: transparent;
+    border: 1px solid $color-text-muted;
+    border-radius: 3px;
+    cursor: pointer;
+
+    @include pseudo-button(
+      $text-color: $color-text-muted,
+      $hover-text-color: $color-light,
+      $background-color: $color-accent
+    );
+  }
+
+  &__btn--addtobag {
+    flex: 1 1 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
 .pagination {
   display: flex;
   justify-content: center;
