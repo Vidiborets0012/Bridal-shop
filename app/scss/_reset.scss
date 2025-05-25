@@ -43,6 +43,10 @@ select {
   font: inherit;
 }
 
+address {
+  font-style: normal;
+}
+
 @media (favors-reduced-motion: reduce) {
   *,
   * ::before,
