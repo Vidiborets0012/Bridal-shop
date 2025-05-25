@@ -185,7 +185,7 @@ body {
   }
 
   &__link {
-    @include pseudo-button;
+    @include pseudo-button($text-color: $color-text-muted);
   }
 }
 

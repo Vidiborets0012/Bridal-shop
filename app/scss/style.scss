@@ -681,14 +681,6 @@
     background-position: center;
   }
 
-  .breadcrumbs {
-    margin-bottom: 80px;
-
-    &__link {
-      @include pseudo-button;
-    }
-  }
-
   &__body {
     position: relative;
   }
