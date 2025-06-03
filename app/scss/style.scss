@@ -1035,41 +1035,22 @@
   }
 
   &__link {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    column-gap: 20px;
+    font-size: 48px;
+    line-height: 1.2;
     transition: opacity 0.2s ease;
 
     @include pseudo-button($display: flex, $opacity: 0.6);
   }
-
-  &__link-text {
-    font-size: 48px;
-    line-height: 1.2;
-  }
-
-  &__link-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 90px;
-    border: $border $color-accent;
-    border-radius: 50%;
-  }
 }
 
 .moving {
-  overflow: hidden;
+  display: flex;
+  column-gap: 28px;
+  overflow-x: hidden;
   white-space: nowrap;
   opacity: 0.2;
 
   &__content {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 28px;
-    padding-right: 28px;
     @extend %lora-400;
     font-size: 160px;
     line-height: 1.1;
@@ -1081,7 +1062,7 @@
 
 @keyframes moving {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-38%);
   }
   100% {
     transform: translateX(-100%);

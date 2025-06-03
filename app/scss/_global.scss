@@ -217,3 +217,38 @@ body {
     );
   }
 }
+
+.icon {
+  display: inline-flex;
+
+  &::after {
+    content: '';
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--arrow-in-circle {
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 20px;
+  }
+
+  &--arrow-in-circle::after {
+    width: 90px;
+    height: 90px;
+    background-image: url('../images/page-404/arrow-in-circle.svg');
+  }
+
+  &--moving-decor {
+    align-items: center;
+    column-gap: 28px;
+  }
+
+  &--moving-decor:after {
+    width: 87px;
+    height: 87px;
+    background-image: url('../images/page-404/moving-decor.svg');
+  }
+}
