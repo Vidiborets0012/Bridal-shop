@@ -3,6 +3,7 @@ $color-primary-light: #e9e1d7;
 $color-accent: #3b2317;
 $color-text-muted: #94897c;
 $color-light: #fff;
+$color-dark: #161815;
 
 $font-family: 'OpenSans', sans-serif;
 $second-family: 'Lora', serif;
@@ -11,7 +12,8 @@ $third-family: 'Inter', sans-serif;
 $border: 1px solid;
 
 $base-container-width: 1200px;
-$page-404-container-width: 1560px;
+$big-container-width: 1560px;
+$medium-container-width: 1520px;
 $global-container-padding-x: 10px;
 
 %opensans-300 {

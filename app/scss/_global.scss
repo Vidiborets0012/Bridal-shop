@@ -29,8 +29,12 @@ body {
   margin-inline: auto;
   padding-inline: $global-container-padding-x;
 
-  &--page-404 {
-    max-width: calc($page-404-container-width + $global-container-padding-x * 2);
+  &--medium {
+    max-width: calc($medium-container-width + $global-container-padding-x * 2);
+  }
+
+  &--big {
+    max-width: calc($big-container-width + $global-container-padding-x * 2);
   }
 }
 
