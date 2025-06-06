@@ -50,6 +50,315 @@
             </article>
           </div>
         </section>
+
+        <section class="blog">
+          <div class="container container--medium">
+            <div class="blog__nav">
+              <h2 class="blog__nav-title">Latest news</h2>
+
+              <div class="blog__nav-forms">
+                <form class="blog__select-form" aria-label="Filter articles by category">
+                  <label for="blog-select" class="visually-hidden">Select a category</label>
+                  <div class="blog__select-wrapper">
+                    <select class="blog__select" name="select" id="blog-select">
+                      <option value="" selected>Categories</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Wedding Dress">Wedding Dress</option>
+                      <option value="Rings">Rings</option>
+                      <option value="Bouquets">Bouquets</option>
+                    </select>
+                  </div>
+                </form>
+
+                <search class="blog__search">
+                  <form class="blog__search-form" role="search">
+                    <label for="blog-search-input" class="visually-hidden">Search articles</label>
+                    <input
+                      class="blog__search-input"
+                      id="blog-search-input"
+                      type="search"
+                      placeholder="search"
+                    />
+                    <button class="blog__search-btn" type="submit" aria-label="Perform search">
+                      <svg width="18" height="18">
+                        <use xlink:href="images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </form>
+                </search>
+              </div>
+
+              <ul class="blog__nav-btns">
+                <li class="blog__nav-btns-item">
+                  <button
+                    class="blog__nav-btn blog__nav-btn-grid"
+                    type="button"
+                    aria-label="Switch to grid view"
+                  >
+                    <svg width="40" height="40">
+                      <use xlink:href="images/sprite.svg#grid-btn"></use>
+                    </svg>
+                  </button>
+                </li>
+                <li class="blog__nav-btns-item">
+                  <button
+                    class="blog__nav-btn blog__nav-btn-line"
+                    type="button"
+                    aria-label="Switch to list view"
+                  >
+                    <svg width="40" height="40">
+                      <use xlink:href="images/sprite.svg#line-btn"></use>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="blog__cards">
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture class="article__image">
+                    <source srcset="images/blog/blog-1.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-1.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-1.jpg"
+                      alt="A groom in a black suit and a bride in a white dress are cutting a three-tier white wedding cake at an outdoor celebration, with dried grass decorations nearby"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding"
+                    >Wedding</a
+                  >
+
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >The Ultimate Wedding Checklist: From 'Yes!' to 'I Do</a
+                    >
+                  </h3>
+                  <p class="article__date">1 day ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-2.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-2.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-2.jpg"
+                      alt="Elegant woman in a voluminous evening dress with a draped bodice and a necklace, posing in a classic interior"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding Dress"
+                    >Wedding Dress</a
+                  >
+
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >How to Choose the Perfect Wedding Dress for Your Style</a
+                    >
+                  </h3>
+                  <p class="article__date">2 days ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-3.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-3.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-3.jpg"
+                      alt="A wedding table setting with a white tablecloth, featuring a gold-framed 'Table №9' card, a white rose, and a glass of white wine"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Rings"
+                    >Rings</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >Wedding Rings 101: A Modern Guide to Styles</a
+                    >
+                  </h3>
+                  <p class="article__date">1 week ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-4.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-4.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-4.jpg"
+                      alt="A groom in a white shirt and black bow tie and a bride in a light wedding dress sitting on sand under a wedding arch decorated with flowers and dried grasses, holding glasses"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding"
+                    >Wedding</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >Picture-Perfect Moments: Wedding Photo Ideas</a
+                    >
+                  </h3>
+                  <p class="article__date">1 week ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-5.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-5.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-5.jpg"
+                      alt="Close-up of two gold wedding rings resting on a cream and white rose wedding bouquet"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Bouquets"
+                    >Bouquets</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >Bridal Bouquets That Wow: 20 Stunning Ideas
+                    </a>
+                  </h3>
+                  <p class="article__date">9 days ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-6.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-6.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-6.jpg"
+                      alt="A groom in a white shirt and black bow tie and a bride in a white lace dress embracing under a wedding arch decorated with white flowers and dried grasses"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding"
+                    >Wedding</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >Top Wedding Trends of the Year: What’s In & What’s Out</a
+                    >
+                  </h3>
+                  <p class="article__date">11 days ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-7.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-7.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-7.jpg"
+                      alt="A woman stands with her back to the camera, showcasing a long white wedding dress with long sleeves, a high beaded collar, and an open train with pearl details"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding Dress"
+                    >Wedding Dress</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >5 Dress Changes for the Bride Who Wants It All</a
+                    >
+                  </h3>
+                  <p class="article__date">2 weeks ago</p>
+                </div>
+              </article>
+
+              <article class="article">
+                <a class="article__link-image" href="#">
+                  <picture>
+                    <source srcset="images/blog/blog-8.avif" type="image/avif" />
+                    <source srcset="images/blog/blog-8.webp" type="image/webp" />
+                    <img
+                      src="images/blog/blog-8.jpg"
+                      alt="Black and white photo of a groom kissing a bride wearing a floral wreath, with a smiling guest in the background"
+                      width="365"
+                      height="400"
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <div class="article__content">
+                  <a
+                    class="article__category category"
+                    href="#"
+                    aria-label="View all articles in Wedding"
+                    >Wedding</a
+                  >
+                  <h3 class="article__title">
+                    <a class="article__title-link" href="#" aria-label="Read more"
+                      >Minimalist Weddings: Simple, Elegant, Unforgettable</a
+                    >
+                  </h3>
+                  <p class="article__date">2 weeks ago</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
       </main>
 
       <!--=include footer.partial.html  -->
