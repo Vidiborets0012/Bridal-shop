@@ -1212,3 +1212,46 @@
     display: none;
   }
 }
+
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  color: $color-primary;
+
+  &__list {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 23px;
+    opacity: 0.3;
+  }
+
+  &__link--active {
+    opacity: 1;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+
+    @include pseudo-button($display: flex);
+  }
+
+  &__arrow-disable {
+    opacity: 0.3;
+  }
+}
