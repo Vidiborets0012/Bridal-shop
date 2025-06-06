@@ -25,10 +25,10 @@ picture {
   display: block;
 }
 
-ul {
-  list-style: none;
+:where(ul[class]) {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 a {
