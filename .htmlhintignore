@@ -5,3 +5,4 @@ app/components/join-us.partial.html
 app/breadcrumbs-collections.partial.html
 app/breadcrumbs-product.partial.html
 app/components/pagination.partial.html
+app/components/blog-pagination.partial.html
