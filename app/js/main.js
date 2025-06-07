@@ -8,3 +8,19 @@ const swiper = new Swiper('.accessories__slider', {
     prevEl: '.accessories__arrow-prev',
   },
 });
+
+const swiperReviews = new Swiper('.reviews__slider', {
+  loop: true,
+  slidesPerView: 9,
+  spaceBetween: 16,
+
+  pagination: {
+    el: '.reviews__pagination',
+    type: 'fraction',
+  },
+
+  navigation: {
+    nextEl: '.reviews__arrow-next',
+    prevEl: '.reviews__arrow-prev',
+  },
+});
