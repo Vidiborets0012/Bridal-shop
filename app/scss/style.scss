@@ -1291,6 +1291,149 @@
   }
 }
 
+.reviews {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__header-title {
+    @extend %lora-400;
+    font-size: 64px;
+  }
+
+  &__header-link {
+    font-size: 24px;
+    color: rgba($color-accent, 0.4);
+    border-bottom: 1px solid $color-accent;
+  }
+
+  &__slider-container {
+    position: relative;
+    overflow-x: hidden;
+    max-width: 1600px;
+    padding-left: 40px;
+    padding-bottom: 52px;
+    margin: 0 auto 24px;
+  }
+
+  &__slide {
+    width: auto;
+  }
+
+  &__slider-rating {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__slider-navigation {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    max-width: 186px;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  &__pagination {
+    font-size: 18px;
+    color: rgba($color-accent, 0.3);
+
+    .swiper-pagination-current {
+      color: $color-accent;
+      padding-right: 10px;
+    }
+
+    .swiper-pagination-total {
+      padding-left: 10px;
+    }
+  }
+
+  &__addreview-btn {
+    display: inline-block;
+    font-size: 16px;
+    padding: 24px 40px;
+    margin-bottom: 60px;
+    border: 1px solid $color-accent;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__item {
+    padding: 40px 50px;
+    border: 1px solid rgba($color-dark, 0.15);
+  }
+
+  &__item-date {
+    margin-bottom: 16px;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+
+  &__item-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 24px;
+    font-size: 24px;
+  }
+
+  &__item-text {
+    max-width: 1220px;
+    opacity: 0.8;
+  }
+
+  &__item-text:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &__item-images {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.reviews-box {
+  display: flex;
+  align-items: center;
+
+  &__number {
+    margin-right: 10px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__all {
+    margin-left: 20px;
+    font-size: 16;
+    color: rgba($color-accent, 0.4);
+    border-bottom: 1px solid $color-accent;
+  }
+}
+
 .pagination {
   display: flex;
   justify-content: center;
