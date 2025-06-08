@@ -1295,83 +1295,85 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2px;
-  font-size: 16px;
-  color: $color-primary;
 
   &__list {
     display: flex;
-    gap: 2px;
   }
 
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include pseudo-button($display: flex);
+  }
+
+  &--collection {
+    gap: 2px;
+    font-size: 16px;
+    color: $color-primary;
+  }
+
+  &__collection-list {
+    gap: 2px;
+  }
+
+  &__collection-link {
     width: 43px;
     height: 43px;
     border-radius: 8px;
   }
 
-  &__link--active {
+  &__collection-link--active {
     color: #fff;
     background-color: $color-text-muted;
   }
 
-  &__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__collection-arrow {
     width: 43px;
     height: 43px;
-
-    @include pseudo-button($display: flex);
   }
 
-  &__arrow-disable {
+  &__collection-arrow-disable {
     display: none;
   }
-}
 
-.blog-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding-top: 50px;
-  margin-bottom: 50px;
-  font-size: 18px;
-  color: $color-primary;
+  &--blog {
+    gap: 16px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: $color-primary;
+  }
 
-  &__list {
-    display: flex;
+  &__blog-list {
     gap: 10px;
   }
 
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__blog-link {
     width: 26px;
     height: 23px;
     opacity: 0.3;
   }
 
-  &__link--active {
+  &__blog-link--active {
     opacity: 1;
   }
 
-  &__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__blog-arrow {
     width: 28px;
     height: 28px;
 
     @include pseudo-button($display: flex);
   }
 
-  &__arrow-disable {
+  &__blog-arrow-disable {
     opacity: 0.3;
   }
 }
