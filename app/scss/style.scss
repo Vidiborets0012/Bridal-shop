@@ -43,16 +43,16 @@
   }
 
   &__logo {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center($isInline: true);
+
     height: 51px;
 
-    @include pseudo-button;
+    @include pseudo-button($display: inline-flex);
   }
 
   &__lang {
     display: flex;
+    align-items: center;
   }
 
   &__lang-item--activ {
@@ -60,7 +60,7 @@
   }
 
   &__lang-link {
-    @include pseudo-button;
+    @include pseudo-button($display: inline-flex);
   }
 
   &__menu-list {
@@ -78,9 +78,8 @@
     column-gap: 20px;
   }
 
-  &__action-item {
+  &__actions-item {
     display: flex;
-    align-items: center;
   }
 
   &__actions-link {
@@ -893,9 +892,8 @@
   }
 
   &__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
+
     flex: 1 1 48%;
     gap: 10px;
     padding: 9px;
@@ -908,6 +906,7 @@
     cursor: pointer;
 
     @include pseudo-button(
+      $display: flex,
       $text-color: $color-text-muted,
       $hover-text-color: $color-light,
       $background-color: $color-accent
@@ -963,9 +962,7 @@
   &__slider-button {
     position: absolute;
     top: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     width: 36px;
     height: 36px;
     z-index: 10;
@@ -1435,24 +1432,18 @@
 }
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 
   &__list {
     display: flex;
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
   }
 
   &__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     @include pseudo-button($display: flex);
   }
