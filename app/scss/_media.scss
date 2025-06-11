@@ -11,3 +11,27 @@
     }
   }
 }
+
+@mixin hover-effect {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:focus) {
+      @content;
+    }
+  }
+}
+
+@mixin focus-visible {
+  &:focus-visible {
+    @content;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}
