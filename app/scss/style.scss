@@ -12,14 +12,31 @@
 
 .promo {
   font-size: 11px;
-  padding: 7px 0 9px;
+  padding: 6px 5 8px;
   text-align: center;
   text-transform: uppercase;
   color: $color-primary;
   background-color: $color-primary-light;
+  border: $border $color-primary-light;
+  transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
 
-  &__link {
-    @include pseudo-button;
+  @include hover-effect {
+    color: $color-light;
+    background-color: $color-accent;
+    border-color: $color-accent;
+  }
+
+  @include focus-visible {
+    color: $color-light;
+    background-color: $color-accent;
+    border-color: $color-accent;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-primary-light;
+    background-color: rgba($color-accent, 0.6);
+    border-color: $color-primary-light;
   }
 }
 
