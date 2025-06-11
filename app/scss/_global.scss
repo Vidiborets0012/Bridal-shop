@@ -347,11 +347,15 @@ body {
     border: $border $color-accent;
     border-radius: 3px;
     text-transform: uppercase;
+
+    @include state-styles;
   }
 
   &--transparent {
     color: $color-text-muted;
     background-color: transparent;
     border: 1px solid $color-primary-light;
+
+    @include state-styles;
   }
 }

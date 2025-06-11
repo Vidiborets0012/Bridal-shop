@@ -137,12 +137,6 @@
 
   &__link {
     padding: 12px 38px;
-
-    @include pseudo-button(
-      $text-color: $color-light,
-      $background-color: $color-light,
-      $border-radius: 0
-    );
   }
 }
 
@@ -181,17 +175,11 @@
     color: $color-text-muted;
   }
 
-  &__btn {
+  &__link {
     align-self: flex-start;
     padding: 10px 65px;
     margin-top: auto;
-
-    @include pseudo-button(
-      $text-color: $color-text-muted,
-      $hover-text-color: $color-light,
-      $background-color: $color-accent,
-      $border-radius: 0
-    );
+    font-size: 16px;
   }
 
   &__text p:not(:last-child) {
@@ -268,21 +256,15 @@
     margin-bottom: 40px;
   }
 
-  &__btn {
+  &__button {
     position: relative;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 11px;
     width: 100%;
-    border: none;
+    max-width: 540px;
     z-index: 2;
     cursor: pointer;
-
-    @include pseudo-button(
-      $text-color: $color-light,
-      $background-color: $color-light,
-      $border-radius: 0
-    );
   }
 
   &__form-caption {
@@ -346,13 +328,6 @@
 
   &__link {
     padding: 10px 93px;
-
-    @include pseudo-button(
-      $text-color: $color-text-muted,
-      $hover-text-color: $color-light,
-      $background-color: $color-accent,
-      $border-radius: 0
-    );
   }
 }
 
@@ -448,13 +423,6 @@
 
   &__link {
     padding: 10px 93px;
-
-    @include pseudo-button(
-      $text-color: $color-text-muted,
-      $hover-text-color: $color-light,
-      $background-color: $color-accent,
-      $border-radius: 0
-    );
   }
 
   &__box-img {
