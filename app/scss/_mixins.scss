@@ -193,3 +193,23 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin state-styles {
+  @include hover-effect {
+    color: $color-accent;
+    background-color: $color-primary-light;
+    border-color: $color-accent;
+  }
+
+  @include focus-visible {
+    color: $color-accent;
+    background-color: $color-primary-light;
+    border-color: $color-accent;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-primary-light;
+    background-color: rgba($color-accent, 0.6);
+  }
+}
