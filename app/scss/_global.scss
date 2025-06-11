@@ -335,3 +335,23 @@ body {
     font-size: 16px;
   }
 }
+
+.button {
+  display: inline-flex;
+
+  transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  &--accent {
+    color: $color-light;
+    background-color: $color-accent;
+    border: $border $color-accent;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  &--transparent {
+    color: $color-text-muted;
+    background-color: transparent;
+    border: 1px solid $color-primary-light;
+  }
+}
