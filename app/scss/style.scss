@@ -476,8 +476,7 @@
     margin-bottom: 5px;
     @extend %lora-400;
     color: $color-text-muted;
-
-    @include pseudo-button;
+    transition: transform 0.25s ease, box-shadow 0.3s ease, color 0.3s ease;
   }
 
   &__box-date {
