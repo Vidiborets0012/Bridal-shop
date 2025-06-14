@@ -505,23 +505,13 @@
     justify-content: space-around;
     align-items: center;
     column-gap: 30px;
-    padding: 55px 0 44px;
+    padding: 50px 0 36px;
     margin-bottom: 50px;
     border-bottom: $border $color-primary-light;
   }
 
-  &__menu-item--inner {
-    padding: 7px 0;
-  }
-
   &__menu-link {
     border-bottom: $border $color-primary-light;
-
-    @include pseudo-button;
-  }
-
-  &__menu-link--border {
-    border: none;
   }
 
   &__elements {
