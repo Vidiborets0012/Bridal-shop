@@ -171,6 +171,28 @@ body {
       transform: translateY(0);
     }
   }
+
+  &--icon-soc1al {
+    @include hover-effect {
+      color: $color-primary;
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      color: $color-primary;
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
+    }
+  }
 }
 
 .button-dark {

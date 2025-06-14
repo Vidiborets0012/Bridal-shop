@@ -530,6 +530,27 @@
     margin-bottom: 5px;
   }
 
+  &__element-link,
+  &__bottom-link {
+    transition: color 0.3s ease;
+
+    @include hover-effect {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+
+    @include focus-visible {
+      color: $color-accent;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+
   &__address-row {
     display: block;
 
@@ -538,15 +559,20 @@
     }
   }
 
-  &__social-list {
+  &__soc1al-list {
     display: flex;
     column-gap: 10px;
   }
 
-  &__social-link {
-    font-size: 0;
+  &__soc1al-item {
+    display: flex;
+  }
 
-    @include pseudo-button($transform-scale: 1.25, $transform-scale-down: 0.9);
+  &__soc1al-link {
+    color: $color-text-muted;
+    border-radius: 50%;
+    transition: color 0.25s ease, scale 0.25s ease, background-color 0.25s ease,
+      border-color 0.25s ease;
   }
 
   &__form {
@@ -567,9 +593,11 @@
     right: 0;
     display: inline-flex;
     @extend %button-reset;
-    font-size: 0;
-
-    @include pseudo-button($transform-scale: 1.25, $transform-scale-down: 0.9);
+    padding: 4px;
+    margin: -4px;
+    color: $color-text-muted;
+    border: $border transparent;
+    border-radius: 3px;
   }
 
   &__bottom {
