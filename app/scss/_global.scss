@@ -47,91 +47,90 @@ body {
   outline-offset: 2px;
 }
 
-.link {
-  position: relative;
-  border-radius: 4px;
-  transition: width 0.5s ease;
-
-  @include hover-after-effect(
-    $color: $color-accent,
-    $height: 1px,
-    $top-offset: 100%,
-    $transition-duration: 0.5s
-  );
-
-  @include hover {
-    &::after {
-      width: 100%;
-    }
-  }
-
-  &:focus,
-  &:active {
-    &::after {
-      width: 100%;
-    }
-  }
-
-  &:not(:focus),
-  &:not(:active) {
-    &::after {
-      width: 0%;
-    }
-    transition: width 0.5s ease;
-  }
-
-  &:focus-visible {
-    outline: 1px solid $color-accent;
-    outline-offset: 2px;
-  }
-}
-
-.logo-link {
-  border: 1px solid transparent;
-  border-radius: 12px;
-  transition: box-shadow 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
-
-  @include hover {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0, 0, 0, 0.2),
-      6px 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
-
-  &:focus {
-    outline: 1px solid $color-accent;
-    outline-offset: 1px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0, 0, 0, 0.2),
-      6px 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
-
-  &:not(:focus) {
-    outline: none;
-    background-color: transparent;
-    box-shadow: none;
-    transform: translateY(0px);
-    transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
-  }
-
-  &:focus-visible {
-    outline: 1px solid $color-accent;
-    outline-offset: 2px;
-    transform: translateY(0);
-  }
-
-  &:active {
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    transform: translateY(0);
-  }
-
-  &:not(:active) {
-    box-shadow: none;
-    transition: box-shadow 0.2s ease;
-  }
-}
-
 .visually-hidden {
   @include visually-hidden;
+}
+
+.logo {
+  @include flex-center($isInline: true);
+
+  height: 51px;
+  padding-inline: 10px;
+  margin-inline: -10px;
+  border: $border transparent;
+  border-radius: 3px;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  @include state-styles;
+}
+
+.menu-link {
+  position: relative;
+  transition: all;
+
+  @include hover-effect {
+    color: $color-primary;
+    border-bottom: none;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @include focus-visible {
+    color: $color-primary;
+    border-bottom: none;
+
+    &::after {
+      width: 100%;
+    }
+
+    outline: none;
+  }
+
+  @include active {
+    color: $color-accent;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 90%;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: 1px;
+    background-color: $color-accent;
+    transition: width 0.3s ease;
+  }
+}
+
+.button {
+  display: inline-flex;
+
+  transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  &--icon {
+    background-color: transparent;
+
+    @include hover-effect {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
+    }
+  }
 }
 
 .button-dark {

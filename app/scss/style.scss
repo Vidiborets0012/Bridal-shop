@@ -45,11 +45,9 @@
 
   &__inner {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 15px;
-    padding: 0 0 10px;
+    flex-direction: column;
+    row-gap: 14px;
+    padding-bottom: 9px;
     font-size: 16px;
     text-transform: uppercase;
   }
@@ -59,34 +57,70 @@
     text-align: center;
   }
 
-  &__logo {
-    @include flex-center($isInline: true);
-
-    height: 51px;
-
-    @include pseudo-button($display: inline-flex);
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &__lang {
+  &__lang-list {
     display: flex;
     align-items: center;
   }
 
-  &__lang-item--activ {
-    @extend %opensans-700;
+  &__lang-item {
+    position: relative;
+
+    @include hover-effect {
+      &::before {
+        opacity: 1;
+      }
+
+      .header__lang-link {
+        opacity: 0;
+      }
+    }
+
+    .header__lang-link {
+      transition: opacity 0.3s ease;
+
+      @include focus-visible {
+        text-decoration: underline;
+        opacity: 1;
+        outline: none;
+      }
+    }
   }
 
   &__lang-link {
-    @include pseudo-button($display: inline-flex);
+    transition: opacity 0.3s ease;
+  }
+
+  &__lang-item::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @extend %opensans-700;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  &__lang-item--activ {
+    @extend %opensans-700;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
   }
 
   &__menu-list {
     display: flex;
     column-gap: 30px;
-  }
-
-  &__menu-link {
-    @include pseudo-button;
   }
 
   &__actions {
@@ -97,27 +131,19 @@
 
   &__actions-item {
     display: flex;
+    align-items: center;
   }
 
   &__actions-link {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0;
+    padding: 4px;
+    margin: -4px;
     color: $color-primary;
-    background-color: transparent;
-
-    @include pseudo-button(
-      $hover-text-color: $color-light,
-      $background-color: $color-primary,
-      $transform-y: 0,
-      $transform-scale: 1.25,
-      $transform-scale-down: 0.9
-    );
+    border: $border transparent;
+    border-radius: 3px;
   }
 
   &__actions-link-wrapper {
     display: inline-flex;
-    align-items: center;
   }
 }
 
