@@ -1473,3 +1473,67 @@ body {
     border-bottom: 1px solid vars.$color-accent;
   }
 }
+
+.catalog {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  &__view-mode {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+  }
+}
+
+.view-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: vars.$color-text-muted;
+
+  &__btn {
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+}
+
+.catalog-sort {
+  &__form {
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url('../images/catalog-sort-arrow.svg');
+      width: 14px;
+      height: 9px;
+      right: 9px;
+      top: 9px;
+    }
+  }
+
+  &__select {
+    width: 205px;
+    padding: 5px 21px 5px 9px;
+    font-size: 11px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$color-text-muted;
+    border-radius: 3px;
+    appearance: none;
+  }
+}
