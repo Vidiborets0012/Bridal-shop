@@ -25,6 +25,20 @@ const swiperReviews = new Swiper('.reviews__slider', {
   },
 });
 
+const modeContainer = document.querySelector('.view-mode__container');
+const modeBtnGrid = document.querySelector('.view-mode__btn-grid');
+const modeBtnLine = document.querySelector('.view-mode__btn-line');
+
+modeBtnGrid.addEventListener('click', () => {
+  modeContainer.classList.add('view-mode__container--grid');
+  modeContainer.classList.remove('view-mode__container--line');
+});
+
+modeBtnLine.addEventListener('click', () => {
+  modeContainer.classList.add('view-mode__container--line');
+  modeContainer.classList.remove('view-mode__container--grid');
+});
+
 const rangeSlider = document.querySelector('.range__slider');
 const rangeMin = document.querySelector('.range__min');
 const rangeMax = document.querySelector('.range__max');

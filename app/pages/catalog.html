@@ -9,14 +9,14 @@
           View as
           <ul class="view-mode">
             <li class="view-mode__item">
-              <button class="view-mode__btn">
+              <button class="view-mode__btn view-mode__btn-grid">
                 <svg width="20" height="20">
                   <use xlink:href="images/sprite.svg#catalog-grid"></use>
                 </svg>
               </button>
             </li>
             <li class="view-mode__item">
-              <button class="view-mode__btn">
+              <button class="view-mode__btn view-mode__btn-line">
                 <svg width="20" height="20">
                   <use xlink:href="images/sprite.svg#catalog-line"></use>
                 </svg>
@@ -229,7 +229,7 @@
           </form>
         </aside>
         <div class="catalog__content-box">
-          <div class="catalog__content-items">
+          <div class="catalog__content-items view-mode__container view-mode__container--grid">
             <div class="catalog__content-item">
               <picture>
                 <source srcset="images/catalog.avif" type="image/avif" />
