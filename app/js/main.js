@@ -26,6 +26,8 @@ const swiperReviews = new Swiper('.reviews__slider', {
 });
 
 const rangeSlider = document.querySelector('.range__slider');
+const rangeMin = document.querySelector('.range__min');
+const rangeMax = document.querySelector('.range__max');
 
 noUiSlider.create(rangeSlider, {
   start: [300, 3000],
@@ -38,4 +40,20 @@ noUiSlider.create(rangeSlider, {
     to: value => Math.round(value),
     from: value => Number(value),
   },
+});
+
+rangeSlider.noUiSlider.on('update', (values, handle) => {
+  if (handle === 0) {
+    rangeMin.value = values[0];
+  } else {
+    rangeMax.value = values[1];
+  }
+});
+
+rangeMin.addEventListener('change', () => {
+  rangeSlider.noUiSlider.set([rangeMin.value, null]);
+});
+
+rangeMax.addEventListener('change', () => {
+  rangeSlider.noUiSlider.set([null, rangeMin.value]);
 });

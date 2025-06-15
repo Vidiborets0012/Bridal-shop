@@ -1630,3 +1630,43 @@ body {
     appearance: none;
   }
 }
+
+.range {
+  width: 218px;
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__label {
+    position: relative;
+    input {
+      display: inline-block;
+      width: 94px;
+      padding: 10px 10px 10px 40px;
+      @extend %opensans-400;
+      font-size: 11px;
+      color: vars.$color-text-muted;
+      border: 1px solid vars.$color-primary;
+      background-color: transparent;
+
+      -moz-appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+
+    &::before {
+      content: '€';
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      color: vars.$color-primary;
+    }
+  }
+}
