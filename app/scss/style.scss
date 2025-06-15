@@ -1638,6 +1638,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 35px;
   }
 
   &__label {
@@ -1666,7 +1667,73 @@ body {
       position: absolute;
       left: 12px;
       top: 12px;
+      font-size: 11px;
       color: vars.$color-primary;
+    }
+  }
+
+  .noUi-target {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background-color: vars.$color-text-muted;
+  }
+
+  .noUi-horizontal {
+    height: 2px;
+  }
+
+  .noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -9px;
+  }
+
+  .noUi-horizontal .noUi-handle-lower {
+    right: -19px;
+  }
+
+  .noUi-handle {
+    border: 1px solid vars.$color-text-muted;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: none;
+  }
+
+  .noUi-handle:before,
+  .noUi-handle:after {
+    content: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 21px;
+    padding-top: 15px;
+    font-size: 11px;
+    color: vars.$color-primary;
+  }
+
+  &__item:first-child {
+    margin-right: 5px;
+    &::before {
+      left: 10px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -19px;
+      left: 16px;
+      width: 1px;
+      height: 6px;
+      background-color: vars.$color-primary;
     }
   }
 }
