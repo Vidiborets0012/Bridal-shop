@@ -2,6 +2,7 @@
 @use 'vars';
 @use 'fonts';
 @use '../../node_modules/swiper/swiper-bundle.css';
+@use '../../node_modules/nouislider/dist/nouislider.css';
 @use 'global';
 
 body {
@@ -1605,9 +1606,6 @@ body {
 }
 
 .catalog-sort {
-  &__form {
-  }
-
   &__wrapper {
     position: relative;
 
