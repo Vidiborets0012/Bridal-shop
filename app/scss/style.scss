@@ -1492,6 +1492,35 @@ body {
     @extend %lora-400;
     font-size: 45px;
   }
+
+  &__content {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__filter {
+    width: 270px;
+  }
+
+  &__content-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+  }
+
+  &__content-item {
+    text-align: center;
+    color: vars.$color-primary;
+  }
+
+  &__item-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__item-price {
+    @extend %opensans-700;
+  }
 }
 
 .view-mode {
