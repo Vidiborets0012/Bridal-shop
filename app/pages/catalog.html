@@ -17,6 +17,51 @@
             <!--=include breadcrumbs-catalog.partial.html  -->
 
             <h1 class="visually-hidden">Luxurious Bridal Haven Catalog</h1>
+
+            <div class="catalog__header">
+              <div class="catalog__view-mode" role="group" aria-label="Change catalog view">
+                <span class="catalog__view-label">View as</span>
+                <ul class="view-mode">
+                  <li class="view-mode__item">
+                    <button
+                      class="view-mode__btn view-mode__btn-grid button button--icon"
+                      type="button"
+                      aria-label="Switch to grid view"
+                      aria-pressed="true"
+                    >
+                      <svg width="20" height="20" aria-hidden="true" focusable="false">
+                        <use xlink:href="images/sprite.svg#catalog-grid"></use>
+                      </svg>
+                    </button>
+                  </li>
+                  <li class="view-mode__item">
+                    <button
+                      class="view-mode__btn view-mode__btn-line button button--icon"
+                      type="button"
+                      aria-label="Switch to list view"
+                      aria-pressed="false"
+                    >
+                      <svg width="20" height="20" aria-hidden="true" focusable="false">
+                        <use xlink:href="images/sprite.svg#catalog-line"></use>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <h2 class="catalog__title">WEDDING DRESSES</h2>
+              <div class="catalog__select-inner">
+                <form class="catalog__select-form" aria-label="Sort articles by popularity">
+                  <label for="catalog-select" class="visually-hidden">Sort by popularity</label>
+                  <div class="catalog__select-wrapper">
+                    <select class="catalog__select" name="catalog-select" id="catalog-select">
+                      <option selected>Sort by popularity</option>
+                      <option value="price">price</option>
+                      <option value="price">price</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
       </main>
