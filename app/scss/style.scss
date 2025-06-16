@@ -1459,6 +1459,82 @@
   }
 }
 
+.catalog {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  &__view-mode {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__view-label {
+    font-size: 11px;
+    color: $color-text-muted;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+  }
+
+  &__select-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url('../images/catalog/catalog-arrow-down.svg');
+      width: 14px;
+      height: 9px;
+      right: 9px;
+      top: 60%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__select {
+    width: 205px;
+    padding: 5px 21px 5px 9px;
+    font-size: 11px;
+    color: $color-text-muted;
+    border: 1px solid $color-text-muted;
+    border-radius: 3px;
+    appearance: none;
+  }
+}
+
+.view-mode {
+  display: flex;
+  column-gap: 10px;
+
+  &__item {
+    display: flex;
+  }
+
+  &__btn {
+    padding: 4px;
+    margin: -4px;
+    color: $color-text-muted;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.25s ease;
+
+    &[aria-pressed='true'] {
+      pointer-events: none;
+      cursor: default;
+      opacity: 1;
+    }
+  }
+}
+
 .pagination {
   @include flex-center;
 
