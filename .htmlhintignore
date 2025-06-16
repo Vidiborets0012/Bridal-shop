@@ -3,6 +3,7 @@ app/components/footer.partial.html
 app/components/promo.partial.html
 app/components/join-us.partial.html
 app/breadcrumbs-collections.partial.html
+app/breadcrumbs-catalog.partial.html
 app/breadcrumbs-product.partial.html
 app/components/pagination-collection.partial.html
 app/components/pagination-blog-reviews.partial.html

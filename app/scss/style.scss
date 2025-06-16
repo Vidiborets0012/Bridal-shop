@@ -1473,7 +1473,29 @@
   &__arrow {
     @include flex-center;
 
-    @include pseudo-button($display: flex);
+    transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+    border: $border transparent;
+    border-radius: 3px;
+    cursor: pointer;
+
+    @include hover-effect {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
+    }
   }
 
   &--collection {
@@ -1531,8 +1553,6 @@
   &__blog-arrow {
     width: 28px;
     height: 28px;
-
-    @include pseudo-button($display: flex);
   }
 
   &__blog-arrow-disable {
