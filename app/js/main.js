@@ -24,3 +24,12 @@ const swiperReviews = new Swiper('.reviews__slider', {
     prevEl: '.reviews__arrow-prev',
   },
 });
+
+const buttons = document.querySelectorAll('.view-mode__btn');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+  });
+});

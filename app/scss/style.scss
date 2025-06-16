@@ -1518,18 +1518,42 @@
   }
 
   &__btn {
+    display: inline-flex;
     padding: 4px;
     margin: -4px;
     color: $color-text-muted;
+    background-color: transparent;
     border: 1px solid transparent;
     border-radius: 3px;
     cursor: pointer;
     opacity: 0.3;
-    transition: opacity 0.25s ease;
+    transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease,
+      opacity 0.25s ease;
 
     &[aria-pressed='true'] {
       pointer-events: none;
       cursor: default;
+      opacity: 1;
+    }
+
+    @include hover-effect {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      opacity: 1;
+    }
+
+    @include focus-visible {
+      scale: 1.25;
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+      opacity: 1;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
       opacity: 1;
     }
   }
