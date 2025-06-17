@@ -1602,24 +1602,21 @@
     gap: 50px 40px;
     padding-bottom: 50px;
   }
+}
 
-  &__card {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-  }
-
-  &__card-content {
+.catalog-card {
+  &__content {
+    row-gap: 10px;
     text-align: center;
     color: $color-primary;
   }
 
-  &__card-title {
+  &__title {
     font-weight: 400;
     font-size: 20px;
   }
 
-  &__card-price {
+  &__price {
     @extend %opensans-700;
   }
 }
