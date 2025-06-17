@@ -193,22 +193,16 @@ body {
       scale: 0.9;
     }
   }
-}
 
-.button-dark {
-  display: inline-block;
-  text-transform: uppercase;
-  color: $color-light;
-  background-color: $color-accent;
-  border-radius: 3px;
-}
+  &--category {
+    padding: 8px 24px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-accent;
+    border: 1px solid rgba($color-dark, 0.15);
 
-.button-transparent {
-  display: inline-block;
-  font-size: 16px;
-  color: $color-text-muted;
-  background-color: transparent;
-  border: $border $color-primary-light;
+    @include state-styles;
+  }
 }
 
 .section {

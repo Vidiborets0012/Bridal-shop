@@ -1097,11 +1097,56 @@
 .blog-main {
   padding: 20px 0 16px;
 
-  &__article {
+  &__card {
     padding: 40px 0;
     margin: 20px 0;
     border-bottom: 1px solid rgba($color-dark, 0.15);
     border-top: 1px solid rgba($color-dark, 0.15);
+  }
+}
+
+.card-main {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 740px;
+  }
+
+  &__category {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__title-link {
+    display: block;
+    @extend %lora-400;
+    font-size: 48px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: 660px;
+    margin-bottom: auto;
+    font-size: 24px;
+    opacity: 0.4;
+  }
+
+  &__link {
+    padding: 32px 64px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border: 1px solid $color-accent;
+
+    @include state-styles;
   }
 }
 
