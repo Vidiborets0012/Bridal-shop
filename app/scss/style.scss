@@ -1682,7 +1682,37 @@
   }
 
   &__container--line {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+
+    .card {
+      flex-direction: row;
+      column-gap: 20px;
+    }
+
+    .card__image {
+      display: flex;
+    }
+
+    .card__image img {
+      flex-shrink: 0;
+      width: 180px;
+      height: auto;
+    }
+
+    .card__content {
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .catalog-card__content {
+      align-items: center;
+    }
+
+    .blog-card__content {
+      align-items: start;
+    }
   }
 }
 
