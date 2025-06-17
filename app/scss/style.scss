@@ -1174,23 +1174,13 @@
     background-color: transparent;
   }
 
-  &__nav-btns {
-    display: flex;
-    column-gap: 20px;
+  &__view-mode {
     margin-left: 100px;
-  }
-
-  &__nav-btn {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+    color: $color-accent;
   }
 
   &__cards {
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: repeat(4, 1fr);
     gap: 50px 20px;
   }
@@ -1522,7 +1512,7 @@
   }
 
   &__cards-list {
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: repeat(3, 1fr);
     gap: 50px 40px;
     padding-bottom: 50px;
@@ -1551,7 +1541,14 @@
 
 .view-mode {
   display: flex;
-  column-gap: 10px;
+
+  &--blog-gap {
+    column-gap: 20px;
+  }
+
+  &--catalog-gap {
+    column-gap: 10px;
+  }
 
   &__item {
     display: flex;
@@ -1596,6 +1593,14 @@
       scale: 0.9;
       opacity: 1;
     }
+  }
+
+  &__container--grid {
+    display: grid;
+  }
+
+  &__container--line {
+    display: block;
   }
 }
 

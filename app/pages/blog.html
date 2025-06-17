@@ -88,23 +88,27 @@
                 </search>
               </div>
 
-              <ul class="blog__nav-btns">
-                <li class="blog__nav-btns-item">
+              <ul class="blog__view-mode view-mode view-mode--blog-gap">
+                <li class="view-mode__item">
                   <button
-                    class="blog__nav-btn blog__nav-btn-grid"
+                    class="view-mode__btn view-mode__btn-grid button button--icon"
                     type="button"
                     aria-label="Switch to grid view"
+                    aria-pressed="true"
+                    data-view-mode="grid"
                   >
                     <svg width="40" height="40">
                       <use xlink:href="images/sprite.svg#grid-btn"></use>
                     </svg>
                   </button>
                 </li>
-                <li class="blog__nav-btns-item">
+                <li class="view-mode__item">
                   <button
-                    class="blog__nav-btn blog__nav-btn-line"
+                    class="view-mode__btn view-mode__btn-line button button--icon"
                     type="button"
                     aria-label="Switch to list view"
+                    aria-pressed="false"
+                    data-view-mode="line"
                   >
                     <svg width="40" height="40">
                       <use xlink:href="images/sprite.svg#line-btn"></use>
@@ -114,7 +118,7 @@
               </ul>
             </div>
 
-            <div class="blog__cards">
+            <div class="blog__cards view-mode__container view-mode__container--grid">
               <article class="article">
                 <a class="article__link-image" href="#">
                   <picture class="article__image">

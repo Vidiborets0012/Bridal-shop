@@ -21,13 +21,14 @@
             <div class="catalog__header">
               <div class="catalog__view-mode" role="group" aria-label="Change catalog view">
                 <span class="catalog__view-label">View as</span>
-                <ul class="view-mode">
+                <ul class="view-mode view-mode--catalog-gap">
                   <li class="view-mode__item">
                     <button
                       class="view-mode__btn view-mode__btn-grid"
                       type="button"
                       aria-label="Switch to grid view"
                       aria-pressed="true"
+                      data-view-mode="grid"
                     >
                       <svg width="20" height="20" aria-hidden="true" focusable="false">
                         <use xlink:href="images/sprite.svg#catalog-grid"></use>
@@ -40,6 +41,7 @@
                       type="button"
                       aria-label="Switch to list view"
                       aria-pressed="false"
+                      data-view-mode="line"
                     >
                       <svg width="20" height="20" aria-hidden="true" focusable="false">
                         <use xlink:href="images/sprite.svg#catalog-line"></use>
@@ -66,7 +68,7 @@
             <div class="catalog__content">
               <aside class="catalog__filter"></aside>
               <div class="catalog__cards-inner">
-                <ul class="catalog__cards-list">
+                <ul class="catalog__cards-list view-mode__container view-mode__container--grid">
                   <li class="catalog__cards-item">
                     <article class="catalog__card">
                       <picture class="catalog__card-image">
