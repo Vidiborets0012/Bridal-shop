@@ -825,88 +825,22 @@
     @extend %opensans-400;
     text-transform: uppercase;
 
-    @include pseudo-button;
-  }
+    transition: color 0.3s ease;
 
-  &__fieldset {
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-
-  &__label {
-    position: relative;
-    display: inline-block;
-    @extend %opensans-400;
-    line-height: 1.38;
-    text-transform: uppercase;
-  }
-
-  &__label--radio {
-    padding-left: 26px;
-  }
-
-  &__label--radio:not(:last-child) {
-    margin-right: 30px;
-  }
-
-  &__label--checkbox {
-    padding-left: 20px;
-  }
-
-  &__label--checkbox:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &__label-mark {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    border: 1px solid $color-primary;
-  }
-
-  &__label-mark--radio {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-  }
-
-  &__label-mark--checkbox {
-    width: 15px;
-    height: 15px;
-    border-radius: 1px;
-  }
-
-  &__input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-
-    &:checked + .product__label-mark--checkbox::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 9px;
-      height: 9px;
-      background-color: $color-primary;
-      border-radius: 1px;
-      transform: translate(-50%, -50%);
+    @include hover-effect {
+      color: $color-accent;
+      text-decoration: underline;
     }
 
-    &:checked + .product__label-mark--radio::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      background-color: $color-primary;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
+    @include focus-visible {
+      color: $color-accent;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-accent;
+      text-decoration: underline;
     }
   }
 
@@ -922,24 +856,13 @@
 
   &__btn {
     @include flex-center;
-
     flex: 1 1 48%;
     gap: 10px;
     padding: 9px;
     line-height: 1.38;
-
-    color: $color-text-muted;
-    background-color: transparent;
     border: 1px solid $color-text-muted;
     border-radius: 3px;
     cursor: pointer;
-
-    @include pseudo-button(
-      $display: flex,
-      $text-color: $color-text-muted,
-      $hover-text-color: $color-light,
-      $background-color: $color-accent
-    );
   }
 
   &__btn--addtobag {
@@ -1591,6 +1514,26 @@
 
   &__filter {
     width: 270px;
+  }
+
+  &__filter-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 20px 26px;
+    border: 1px solid $color-text-muted;
+  }
+
+  &__filter-clean {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 12px;
+    color: $color-primary;
   }
 
   &__cards-inner {

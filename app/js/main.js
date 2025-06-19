@@ -46,3 +46,36 @@ viewModeButtons.forEach(btn => {
     }
   });
 });
+
+const rangeSlider = document.querySelector('.form-control__range-slider');
+const rangeMin = document.querySelector('.form-control__input--min');
+const rangeMax = document.querySelector('.form-control__input--max');
+
+noUiSlider.create(rangeSlider, {
+  start: [300, 3000],
+  step: 100,
+  range: {
+    min: 300,
+    max: 3000,
+  },
+  format: {
+    to: value => Math.round(value),
+    from: value => Number(value),
+  },
+});
+
+rangeSlider.noUiSlider.on('update', (values, handle) => {
+  if (handle === 0) {
+    rangeMin.value = values[0];
+  } else {
+    rangeMax.value = values[1];
+  }
+});
+
+rangeMin.addEventListener('change', () => {
+  rangeSlider.noUiSlider.set([rangeMin.value, null]);
+});
+
+rangeMax.addEventListener('change', () => {
+  rangeSlider.noUiSlider.set([null, rangeMax.value]);
+});
