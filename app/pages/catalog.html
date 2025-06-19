@@ -66,7 +66,436 @@
             </div>
 
             <div class="catalog__content">
-              <aside class="catalog__filter"></aside>
+              <aside class="catalog__filter">
+                <form class="catalog__filter-form">
+                  <fieldset class="form-control form-control--filter">
+                    <legend
+                      class="form-control__subtitle form-control__subtitle--font-lora form-control__subtitle--mb-10 form-control__subtitle--before"
+                    >
+                      PRICE
+                    </legend>
+                    <div
+                      class="form-control__items form-control__items--range form-control__items--font-size"
+                    >
+                      <div class="form-control__label-inner">
+                        <label class="form-control__label form-control__label--before"
+                          ><input
+                            class="form-control__input--range form-control__input--min"
+                            type="number"
+                            min="300"
+                            max="3000"
+                            step="100"
+                          />
+                        </label>
+
+                        <span class="form-control__range-separator">–</span>
+
+                        <label class="form-control__label form-control__label--before"
+                          ><input
+                            class="form-control__input--range form-control__input--max"
+                            type="number"
+                            min="300"
+                            max="3000"
+                            step="100"
+                          />
+                        </label>
+                      </div>
+
+                      <div class="form-control__range-slider"></div>
+
+                      <ul class="form-control__list">
+                        <li class="form-control__item">300</li>
+                        <li class="form-control__item">1,000</li>
+                        <li class="form-control__item">1,500</li>
+                        <li class="form-control__item">2,000</li>
+                        <li class="form-control__item">2,500</li>
+                        <li class="form-control__item">3,000</li>
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-control form-control--filter">
+                    <legend
+                      class="form-control__subtitle form-control__subtitle--font-lora form-control__subtitle--mb-10 form-control__subtitle--before"
+                    >
+                      Size
+                    </legend>
+                    <div
+                      class="form-control__items form-control__items--column-2 form-control__items--font-size"
+                    >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="size"
+                          value="XS"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >XS</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input class="form-control__input" type="checkbox" name="size" value="S" />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >S</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input class="form-control__input" type="checkbox" name="size" value="M" />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >M</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input class="form-control__input" type="checkbox" name="size" value="L" />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >L</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="size"
+                          value="XL"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >XL</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="size"
+                          value="XXL"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >XXL</label
+                      >
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-control form-control--filter form-control--filter-color">
+                    <legend
+                      class="form-control__subtitle form-control__subtitle--font-lora form-control__subtitle--mb-10 form-control__subtitle--before"
+                    >
+                      Color
+                    </legend>
+                    <div
+                      class="form-control__items form-control__items--flex form-control__items--gap-45 form-control__items--font-size"
+                    >
+                      <label class="form-control__label form-control__label--radio"
+                        ><input
+                          class="form-control__input"
+                          type="radio"
+                          name="color"
+                          value="white"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--radio"
+                        ></span
+                        >White
+                      </label>
+                      <label class="form-control__label form-control__label--radio"
+                        ><input
+                          class="form-control__input"
+                          type="radio"
+                          name="color"
+                          value="ivory"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--radio"
+                        ></span
+                        >Ivory
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-control form-control--filter">
+                    <legend
+                      class="form-control__subtitle form-control__subtitle--font-lora form-control__subtitle--mb-10 form-control__subtitle--before"
+                    >
+                      MATERIAL
+                    </legend>
+                    <div
+                      class="form-control__items form-control__items--column-2 form-control__items--font-size"
+                    >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="LACE"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >LACE</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="SILK"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >SILK</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="CREPE"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >CREPE</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="SATIN"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >SATIN</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="EMBROIDERY"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >EMBROIDERY</label
+                      >
+                      <label
+                        class="form-control__label form-control__label--checkbox form-control__label--flex form-control__label--mb-15"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="material"
+                          value="ECO"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >ECO</label
+                      >
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-control form-control--filter">
+                    <legend
+                      class="form-control__subtitle form-control__subtitle--font-lora form-control__subtitle--mb-10 form-control__subtitle--before"
+                    >
+                      STYLE
+                    </legend>
+                    <div
+                      class="form-control__items form-control__items--flex-column form-control__items--font-size"
+                    >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="ALL"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >ALL</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="BOHO"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >BOHO</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="ROMANTIC"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >ROMANTIC</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="ELEGANT"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >ELEGANT</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="VINTAGE"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >VINTAGE</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="SIMPLE"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >SIMPLE</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="MODERN"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >MODERN</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="FORMAL"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >FORMAL</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="PRINCESS"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >PRINCESS</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="GLAMOROUS"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >GLAMOROUS</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="MODEST"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >MODEST</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="CASUAL"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >CASUAL</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="BEACH"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >BEACH</label
+                      >
+                      <label class="form-control__label form-control__label--checkbox"
+                        ><input
+                          class="form-control__input"
+                          type="checkbox"
+                          name="style"
+                          value="ELOPEMENT"
+                        />
+                        <span
+                          class="form-control__label-mark form-control__label-mark--checkbox"
+                        ></span
+                        >ELOPEMENT</label
+                      >
+                    </div>
+                  </fieldset>
+                  <button class="catalog__filter-clean">CLEAN ALL</button>
+                </form>
+              </aside>
               <div class="catalog__cards-inner">
                 <ul class="catalog__cards-list view-mode__container view-mode__container--grid">
                   <li class="catalog__cards-item">
