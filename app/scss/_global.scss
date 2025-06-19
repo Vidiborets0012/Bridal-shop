@@ -403,9 +403,11 @@ body {
 
     .noUi-horizontal {
       height: 2px;
+      width: 196px;
+      margin-inline: auto;
     }
 
-    .noUi-horizontal .noUi-handle {
+    /*.noUi-horizontal .noUi-handle {
       width: 20px;
       height: 20px;
       right: -10px;
@@ -414,14 +416,25 @@ body {
 
     .noUi-horizontal .noUi-handle-lower {
       right: -19px;
-    }
+    }*/
 
     .noUi-handle {
+      width: 20px;
+      height: 20px;
+      top: -9px;
       border: 1px solid $color-text-muted;
       border-radius: 50%;
       background: #fff;
       cursor: pointer;
       box-shadow: none;
+    }
+
+    .noUi-horizontal .noUi-handle-lower {
+      right: -9px;
+    }
+
+    .noUi-horizontal .noUi-handle-upper {
+      right: -9px;
     }
 
     .noUi-handle:before,
