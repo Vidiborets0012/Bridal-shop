@@ -26,7 +26,7 @@ const swiperReviews = new Swiper('.reviews__slider', {
 });
 
 const viewModeButtons = document.querySelectorAll('.view-mode__btn');
-const viewModeContainer = document.querySelector('.view-mode__container');
+const viewModeContainer = document.querySelector('.cards-list');
 
 viewModeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -37,19 +37,19 @@ viewModeButtons.forEach(btn => {
 
     const mode = btn.dataset.viewMode;
 
-    viewModeContainer.classList.remove('view-mode__container--grid', 'view-mode__container--line');
+    viewModeContainer.classList.remove('cards-list--grid', 'cards-list--line');
 
     if (mode === 'grid') {
-      viewModeContainer.classList.add('view-mode__container--grid');
+      viewModeContainer.classList.add('cards-list--grid');
     } else if (mode === 'line') {
-      viewModeContainer.classList.add('view-mode__container--line');
+      viewModeContainer.classList.add('cards-list--line');
     }
   });
 });
 
 const rangeSlider = document.querySelector('.form-control__range-slider');
-const rangeMin = document.querySelector('.form-control__input--min');
-const rangeMax = document.querySelector('.form-control__input--max');
+const rangeMin = document.querySelector('.form-control__input-min');
+const rangeMax = document.querySelector('.form-control__input-max');
 
 noUiSlider.create(rangeSlider, {
   start: [300, 3000],

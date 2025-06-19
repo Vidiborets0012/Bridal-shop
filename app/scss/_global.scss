@@ -338,6 +338,7 @@ body {
     flex-direction: column;
   }
 }
+
 .form-control {
   margin: 0;
   border: none;
@@ -406,17 +407,6 @@ body {
       width: 196px;
       margin-inline: auto;
     }
-
-    /*.noUi-horizontal .noUi-handle {
-      width: 20px;
-      height: 20px;
-      right: -10px;
-      top: -9px;
-    }
-
-    .noUi-horizontal .noUi-handle-lower {
-      right: -19px;
-    }*/
 
     .noUi-handle {
       width: 20px;
@@ -543,17 +533,9 @@ body {
     padding-left: 26px;
   }
 
-  /*&__label--radio:not(:last-child) {
-    margin-right: 30px;
-  }*/
-
   &__label--checkbox {
     padding-left: 20px;
   }
-
-  /*&__label--checkbox:not(:last-child) {
-    margin-right: 10px;
-  }*/
 
   &__label-mark {
     position: absolute;
@@ -614,7 +596,7 @@ body {
     }
   }
 
-  &__input--range {
+  &__input-range {
     display: inline-block;
     width: 94px;
     padding: 10px 10px 10px 40px;
