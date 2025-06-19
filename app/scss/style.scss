@@ -1508,8 +1508,17 @@
   }
 
   &__content {
+    position: relative;
     display: flex;
     column-gap: 40px;
+  }
+
+  &__decor {
+    bottom: 0;
+    left: 0;
+    width: calc(368px / 1200px * 100%);
+    aspect-ratio: calc(368px / 484px);
+    background-image: url('../images/catalog/catalog-decor.svg');
   }
 
   &__filter {
