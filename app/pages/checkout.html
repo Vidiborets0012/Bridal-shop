@@ -167,7 +167,98 @@
             <button class="checkout__info-btn" type="submit">Place an order</button>
           </form>
         </div>
-        <div class="checkout__details"></div>
+        <div class="checkout__details">
+          <p class="checkout__details-title">Order details</p>
+          <div class="checkout__details-items">
+            <div class="checkout__details-itemsline">
+              <p class="checkout__details-quantity">2 items in bag</p>
+              <button class="checkout__details-del" type="button">
+                <svg width="18" height="18">
+                  <use xlink:href="images/sprite.svg#checkout-del"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="checkout__item">
+              <picture>
+                <source srcset="images/order-1.avif" type="image/avif" />
+                <source srcset="images/order-1.webp" type="image/webp" />
+                <img class="checkout__item-img" src="images/order-1.png" alt="Alt text" />
+              </picture>
+              <div class="checkout__item-box">
+                <p class="checkout__item-title">NAOMI</p>
+                <dl class="checkout__item-list">
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">SIZE:</dt>
+                    <dd class="checkout__item-definition">S</dd>
+                  </div>
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">COLOR:</dt>
+                    <dd class="checkout__item-definition">IVORY</dd>
+                  </div>
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">Item subtotal:</dt>
+                    <dd class="checkout__item-definition">€ 2,600</dd>
+                  </div>
+                </dl>
+                <button class="checkout__item-del" type="">
+                  <svg width="16" height="20">
+                    <use xlink:href="images/sprite.svg#item-del"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="checkout__item">
+              <picture>
+                <source srcset="images/order-2.avif" type="image/avif" />
+                <source srcset="images/order-2.webp" type="image/webp" />
+                <img class="checkout__item-img" src="images/order-2.png" alt="Alt text" />
+              </picture>
+              <div class="checkout__item-box">
+                <p class="checkout__item-title">SABINE</p>
+                <dl class="checkout__item-list">
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">SIZE:</dt>
+                    <dd class="checkout__item-definition">38</dd>
+                  </div>
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">COLOR:</dt>
+                    <dd class="checkout__item-definition">IVORY</dd>
+                  </div>
+                  <div class="checkout__item-listbox">
+                    <dt class="checkout__item-term">Item subtotal:</dt>
+                    <dd class="checkout__item-definition">€ 200</dd>
+                  </div>
+                </dl>
+                <button class="checkout__item-del" type="">
+                  <svg width="16" height="20">
+                    <use xlink:href="images/sprite.svg#item-del"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="order">
+            <p class="order__title">Your order</p>
+            <dl class="order__list">
+              <div class="order__list-box">
+                <dt class="order__list-term">Subtotal:</dt>
+                <dd class="order__list-difinition">€2, 800</dd>
+              </div>
+              <div class="order__list-box">
+                <dt class="order__list-term">Shipping:</dt>
+                <dd class="order__list-difinition">FREE</dd>
+              </div>
+              <div class="order__list-box">
+                <dt class="order__list-term">Total:</dt>
+                <dd class="order__list-difinition">€ 2,800</dd>
+              </div>
+            </dl>
+            <a class="order__link" href="#">Change items</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
