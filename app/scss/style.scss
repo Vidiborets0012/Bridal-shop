@@ -1771,3 +1771,182 @@ body {
     }
   }
 }
+
+.checkout {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 64px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__info-item + .checkout__info-item {
+    margin-top: 80px;
+  }
+
+  &__info-title {
+    @extend %lora-400;
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(vars.$color-accent, 0.2);
+  }
+
+  &__infobox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__infobox-label {
+    display: block;
+  }
+
+  &__infobox-input {
+    display: block;
+    width: 100%;
+    padding: 26px 32px;
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1;
+    border: 1px solid rgba(vars.$color-accent, 0.2);
+
+    &::placeholder {
+      opacity: 0.4;
+    }
+  }
+
+  &__infobox-wrapp {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 34px;
+    }
+  }
+
+  &__infobox--marker {
+    &::before {
+      background-image: url('../images/marker.svg');
+      width: 18px;
+      height: 20px;
+      top: 65px;
+    }
+  }
+
+  &__infobox--arrow {
+    &::before {
+      background-image: url('../images/select-arrow.svg');
+      width: 20px;
+      height: 16px;
+      top: 71px;
+    }
+  }
+
+  &__infobox-select {
+    display: block;
+    width: 100%;
+    padding: 26px 64px 26px 32px;
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1;
+    border: 1px solid rgba(vars.$color-accent, 0.2);
+    color: rgba(vars.$color-accent, 0.4);
+    appearance: none;
+  }
+
+  &__info-delbox {
+  }
+
+  &__info-radio {
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(vars.$color-accent, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .radio-label:has(.radio-box:checked) + .checkout__info-delprice {
+    opacity: 1;
+  }
+
+  .radio-box:checked + .radio-style + .radio-name {
+    opacity: 1;
+  }
+  .radio-box {
+  }
+  .radio-box {
+  }
+
+  .radio-stile {
+    margin-top: 7px;
+  }
+
+  .radio-name {
+    font-style: 24px;
+    opacity: 0.4;
+  }
+
+  .radio-text {
+    display: block;
+    margin-top: 8px;
+    @extend %inter-400;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+
+  &__info-delprice {
+    font-size: 24px;
+    opacity: 0.4;
+  }
+
+  &__infobox-pay {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__infobox-paycard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__info-text {
+    margin: 32px 0;
+    font-size: 16px;
+    max-width: 560px;
+    opacity: 0.4;
+  }
+
+  &__info-btn {
+    text-transform: uppercase;
+    background-color: vars.$color-accent;
+    border: none;
+    text-align: center;
+    display: block;
+    padding: 28px;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__details {
+    min-width: 616px;
+  }
+}
