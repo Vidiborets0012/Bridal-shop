@@ -1870,9 +1870,6 @@ body {
     appearance: none;
   }
 
-  &__info-delbox {
-  }
-
   &__info-radio {
     padding: 26px 0;
     border-bottom: 1px solid rgba(vars.$color-accent, 0.2);
@@ -1887,10 +1884,6 @@ body {
 
   .radio-box:checked + .radio-style + .radio-name {
     opacity: 1;
-  }
-  .radio-box {
-  }
-  .radio-box {
   }
 
   .radio-stile {
@@ -1948,5 +1941,137 @@ body {
 
   &__details {
     min-width: 616px;
+  }
+
+  &__details-title {
+    @extend %lora-400;
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(vars.$color-accent, 0.2);
+  }
+
+  &__details-items {
+    margin-bottom: 123px;
+  }
+
+  &__details-itemsline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px 15px 10px;
+    background-color: vars.$bg-primary;
+  }
+
+  &__details-quantity {
+    font-size: 16px;
+  }
+
+  &__details-del {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &__item {
+    display: flex;
+    gap: 20px;
+    padding: 30px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid vars.$bg-primary;
+  }
+
+  &__item-img {
+    min-width: 140px;
+  }
+
+  &__item-box {
+    position: relative;
+    width: 100%;
+  }
+
+  &__item-title {
+    @extend %lora-400;
+    margin-bottom: 40px;
+  }
+
+  &__item-list {
+    font-size: 16px;
+  }
+
+  &__item-listbox {
+    display: flex;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 40px;
+      @extend %opensans-700;
+      justify-content: space-between;
+    }
+  }
+
+  &__item-term {
+    @extend %opensans-700;
+  }
+
+  &__item-definition {
+    margin-left: 10px;
+  }
+
+  &__item-del {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}
+
+.order {
+  padding: 60px 40px;
+  border: 1px solid rgba(vars.$color-accent, 0.2);
+
+  &__title {
+    @extend %lora-400;
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(vars.$color-accent, 0.2);
+  }
+
+  &__list {
+    margin-bottom: 80px;
+  }
+
+  &__list-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    opacity: 0.6;
+
+    &:last-child {
+      opacity: 1;
+      font-size: 32px;
+      margin-bottom: 0;
+      margin-top: 32px;
+    }
+  }
+
+  &__list-term {
+  }
+
+  &__list-difinition {
+  }
+
+  &__link {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid vars.$color-accent;
   }
 }
