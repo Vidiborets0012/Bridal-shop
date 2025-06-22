@@ -1749,6 +1749,48 @@
   }
 }
 
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  max-width: 824px;
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+
+  &__control {
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    border: none;
+  }
+
+  &__control-title {
+    width: 100%;
+    padding-inline: 0;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    @extend %lora-400;
+    font-size: 40px;
+    border-bottom: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__text {
+    max-width: 560px;
+    font-size: 16px;
+    opacity: 0.4;
+  }
+
+  &__btn {
+    padding: 28px;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
 .pagination {
   @include flex-center;
 
