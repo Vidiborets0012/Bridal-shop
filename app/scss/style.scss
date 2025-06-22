@@ -1791,6 +1791,167 @@
   }
 }
 
+.control-box {
+  display: grid;
+
+  &--column-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  &--column-1 {
+    row-gap: 24px;
+  }
+
+  &__label {
+    @extend %inter-400;
+  }
+
+  &__label--before {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      right: 34px;
+      top: 65px;
+    }
+  }
+
+  &__label--marker {
+    &::before {
+      background-image: url('../images/checkout/select-marker.svg');
+    }
+  }
+
+  &__label--arrow {
+    &::before {
+      background-image: url('../images/checkout/select-arrow.svg');
+    }
+  }
+
+  &__label-wrapper {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  &__input,
+  &__select {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1;
+    border: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__input {
+    padding: 26px 32px;
+
+    &::placeholder {
+      opacity: 0.4;
+    }
+  }
+
+  &__select {
+    padding: 26px 64px 26px 32px;
+    color: rgba($color-accent, 0.4);
+    appearance: none;
+  }
+
+  &__radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 26px;
+    border-bottom: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__label-radio {
+    position: relative;
+    padding-left: 40px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__label-radio-wrapper {
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+
+  &__label-mark {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 2px solid rgba($color-accent, 0.2);
+    border-radius: 50%;
+    transition: 0.2s;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $color-accent;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__label-text {
+    display: block;
+    margin-left: -40px;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+
+  &__radio-price {
+    font-size: 24px;
+    opacity: 0.4;
+  }
+
+  &__input-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + .control-box__label-mark {
+      border-color: rgba($color-accent, 1);
+
+      &::after {
+        display: block;
+      }
+    }
+
+    &:checked + .control-box__label-radio-wrapper {
+      opacity: 1;
+    }
+  }
+
+  &__label-radio:has(.control-box__input-radio:checked) + .control-box__radio-price {
+    opacity: 1;
+  }
+
+  &__label-radio:has(.control-box__input-radio:checked) .control-box__label-radio-wrapper {
+    opacity: 1;
+  }
+
+  &__paycard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+  }
+}
+
 .pagination {
   @include flex-center;
 
