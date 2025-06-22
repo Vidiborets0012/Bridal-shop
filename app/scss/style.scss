@@ -1709,6 +1709,46 @@
   }
 }
 
+.checkout {
+  padding-bottom: 48px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    margin-bottom: 48px;
+  }
+
+  &__header-title {
+    @extend %lora-400;
+    font-size: 64px;
+  }
+
+  &__main {
+    display: flex;
+    column-gap: 80px;
+  }
+
+  &__details {
+    min-width: 616px;
+  }
+
+  &__details-title {
+    @extend %lora-400;
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__details-main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 123px;
+  }
+}
+
 .pagination {
   @include flex-center;
 
