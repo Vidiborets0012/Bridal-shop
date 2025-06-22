@@ -2041,6 +2041,45 @@
   }
 }
 
+.order {
+  padding: 60px 40px;
+  border: 1px solid rgba($color-accent, 0.2);
+
+  &__title {
+    @extend %lora-400;
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba($color-accent, 0.2);
+  }
+
+  &__list {
+    margin-bottom: 80px;
+  }
+
+  &__list-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    opacity: 0.6;
+
+    &:last-child {
+      opacity: 1;
+      font-size: 32px;
+      margin-bottom: 0;
+      margin-top: 32px;
+    }
+  }
+
+  &__link {
+    padding: 30px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .pagination {
   @include flex-center;
 
