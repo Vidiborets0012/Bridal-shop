@@ -1,5 +1,12 @@
 @use 'vars' as *;
 @use 'mixins' as *;
+@use 'media' as *;
+
+@include desktop {
+  main {
+    display: none;
+  }
+}
 
 .promo {
   font-size: 11px;
