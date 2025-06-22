@@ -1952,6 +1952,95 @@
   }
 }
 
+.cart {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px 12px 15px 10px;
+    background-color: $color-primary-light;
+  }
+
+  &__quantity {
+    font-size: 16px;
+  }
+
+  &__btn-close {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin-inline: 10px;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: $border $color-primary-light;
+  }
+
+  &__image {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__item-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  &__item-title {
+    @extend %lora-400;
+    font-size: 20px;
+  }
+
+  &__item-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 16px;
+  }
+
+  &__item-listbox {
+    display: flex;
+  }
+
+  &__item-term {
+    @extend %opensans-700;
+  }
+
+  &__item-description {
+    margin-left: 10px;
+  }
+
+  &__item-subtotal-box {
+    display: flex;
+    justify-content: space-between;
+    @extend %opensans-700;
+  }
+
+  &__btn-del {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}
+
 .pagination {
   @include flex-center;
 
