@@ -10,7 +10,7 @@
 
 @include font-face($third-family, 'Inter-Regular', 400, normal);
 
-@mixin hover-after-effect(
+/*@mixin hover-after-effect(
   $color: $color-accent,
   $height: 2px,
   $top-offset: 90%,
@@ -61,4 +61,4 @@
     background-color: transparent;
     transition: background-color $duration ease-in-out;
   }
-}
+}*/

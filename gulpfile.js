@@ -64,7 +64,7 @@ function images() {
 
 function styles() {
   return src('app/scss/style.scss')
-    .pipe(scss({ style: 'compressed' }))
+    .pipe(scss({ outputStyle: 'compressed' }))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], cascade: false }))
     .pipe(concat('style.min.css'))
     .pipe(dest('app/css'))
@@ -89,7 +89,7 @@ function watching() {
       baseDir: 'app/',
     },
   });
-  watch(['app/scss/*.scss'], styles);
+  watch(['app/scss/**/*.scss'], styles);
   watch(['app/images/src/**/*.*'], images);
   watch(['app/images/sprite/*.svg'], sprites);
   watch(['app/pages/*', 'app/components/*'], pages);

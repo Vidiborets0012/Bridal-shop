@@ -1,37 +1,28 @@
-@mixin hover {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover:not(:focus) {
-      @content;
-    }
-  }
-
-  @media (hover: none) and (pointer: coarse) {
-    &:active {
-      @content;
-    }
+@media (max-width: 1300px) {
+  .main {
+    display: none;
   }
 }
 
-@mixin hover-effect {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover:not(:focus) {
-      @content;
+@media (max-width: 1000px) {
+  .footer {
+    &__elements {
+      flex-wrap: wrap;
+      gap: 0 47px;
+      margin-bottom: 10px;
     }
-  }
-}
 
-@mixin focus-visible {
-  &:focus-visible {
-    @content;
-  }
+    &__element--soc1al {
+      order: 1;
+      width: 100%;
 
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-}
+      .footer__element-title {
+        display: none;
+      }
 
-@mixin active {
-  &:active {
-    @content;
+      .footer__soc1al-list {
+        justify-content: flex-end;
+      }
+    }
   }
 }
