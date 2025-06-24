@@ -1,3 +1,10 @@
+const burgerMenuButoon = document.querySelector('.header__burger-menu');
+const burgerMenu = document.querySelector('.header__menu-container');
+
+burgerMenuButoon.addEventListener('click', () => {
+  burgerMenu.classList.toggle('is-active');
+});
+
 const swiper = new Swiper('.accessories__slider', {
   loop: true,
   slidesPerView: 3,

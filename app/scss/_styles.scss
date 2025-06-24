@@ -48,17 +48,125 @@
     padding-bottom: 9px;
     font-size: 16px;
     text-transform: uppercase;
+
+    @include laptop {
+      padding-bottom: 0;
+    }
+
+    @include laptop-m {
+      /*position: relative;*/
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 20px;
+    }
+
+    @include mobile-s {
+      column-gap: 10px;
+    }
   }
 
   &__logo-inner {
     width: 100%;
     text-align: center;
+
+    @include laptop-m {
+      width: auto;
+    }
+
+    @include tablet {
+      margin-left: auto;
+      margin-right: 87px;
+    }
+
+    @include tablet-m {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__burger-menu {
+    display: none;
+    padding: 4px;
+    margin: -4px;
+    color: $color-primary;
+    border: $border transparent;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+    @include laptop-m {
+      position: relative;
+      display: inline-flex;
+      z-index: 10;
+    }
+
+    @include hover-effect {
+      scale: 1.25;
+      color: $color-primary-light;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      scale: 1.25;
+      color: $color-primary-light;
+      background-color: $color-primary;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary;
+      scale: 0.9;
+      color: currentColor;
+    }
   }
 
   &__navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__menu-container {
+    display: flex;
+
+    @include laptop-m {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      row-gap: 100px;
+      padding: 100px 0 100px;
+      text-align: center;
+      background-color: $color-primary-light;
+      z-index: 5;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__menu-container.is-active {
+    transform: translateY(0);
+  }
+
+  &__menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include laptop-m {
+      position: static;
+      transform: translateX(0);
+    }
   }
 
   &__lang-list {
@@ -119,12 +227,25 @@
   &__menu-list {
     display: flex;
     column-gap: 30px;
+
+    @include laptop-m {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__menu-item {
+    white-space: nowrap;
   }
 
   &__actions {
     display: flex;
     align-items: center;
     column-gap: 20px;
+
+    @include mobile {
+      column-gap: 15px;
+    }
   }
 
   &__actions-item {
@@ -498,14 +619,75 @@
   font-size: 16px;
   color: $color-text-muted;
 
+  &__logo-inner {
+    display: none;
+
+    @include laptop-m {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding-inline: 10px;
+  }
+
+  &__menu {
+    padding: 50px 0 36px;
+    margin-bottom: 50px;
+    border-bottom: $border $color-primary-light;
+
+    @include laptop {
+      margin-bottom: 20px;
+      padding: 0 0 30px;
+    }
+
+    @include laptop-m {
+      padding-top: 20px;
+    }
+
+    @include tablet-m {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+  }
+
   &__menu-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
     column-gap: 30px;
-    padding: 50px 0 36px;
+    /*padding: 50px 0 36px;
     margin-bottom: 50px;
-    border-bottom: $border $color-primary-light;
+    border-bottom: $border $color-primary-light;*/
+
+    /*@include laptop {
+      margin-bottom: 20px;
+      padding: 0 0 30px;
+    }
+
+    @include laptop-m {
+      padding-top: 20px;
+    }*/
+
+    @include tablet-m {
+      flex-wrap: wrap;
+      gap: 11px 35px;
+      width: 286px;
+      /*padding-top: 30px;*/
+    }
+  }
+
+  &__menu-item--logo {
+    @include laptop-m {
+      display: none;
+    }
   }
 
   &__menu-link {
@@ -517,11 +699,63 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 50px;
+
+    @include laptop {
+      flex-wrap: wrap;
+      gap: 0 47px;
+
+      margin-bottom: 10px;
+    }
+
+    @include laptop-m {
+      max-width: 640px;
+      margin-inline: auto;
+      gap: 30px 75px;
+    }
+
+    @include tablet-m {
+      max-width: none;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 17px;
+    }
   }
 
   &__element-title {
     opacity: 0.5;
     margin-bottom: 20px;
+
+    @include tablet-m {
+      text-align: center;
+    }
+  }
+
+  &__element--soc1al {
+    @include laptop {
+      order: 1;
+      width: 100%;
+
+      .footer__element-title {
+        display: none;
+      }
+
+      .footer__soc1al-list {
+        justify-content: flex-end;
+      }
+    }
+
+    @include laptop-m {
+      margin-top: -23px;
+    }
+
+    @include tablet-m {
+      margin-top: 0;
+
+      .footer__soc1al-list {
+        justify-content: center;
+      }
+    }
   }
 
   &__element-item:not(:last-child) {
@@ -609,10 +843,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include tablet-m {
+      flex-direction: column;
+      row-gap: 10px;
+    }
   }
 
   &__copy {
     padding-left: 26px;
+
+    @include tablet-m {
+      padding-left: 0;
+    }
   }
 
   &__bottom-list {

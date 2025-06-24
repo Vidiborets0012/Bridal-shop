@@ -1,6 +1,8 @@
 $desktop: 1200px;
 $laptop: 1000px;
+$laptop-m: 920px;
 $tablet: 768px;
+$tablet-m: 560px;
 $mobile: 480px;
 $mobile-s: 360px;
 
@@ -16,8 +18,20 @@ $mobile-s: 360px;
   }
 }
 
+@mixin laptop-m {
+  @media (width <= $laptop-m) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (width <= $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-m {
+  @media (width <= $tablet-m) {
     @content;
   }
 }

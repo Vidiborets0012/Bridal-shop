@@ -1,6 +1,11 @@
 <header class="header">
   <div class="container">
     <div class="header__inner">
+      <button class="header__burger-menu button button--icon">
+        <svg width="30" height="19">
+          <use xlink:href="images/sprite.svg#burger-menu"></use>
+        </svg>
+      </button>
       <div class="header__logo-inner">
         <a class="header__logo logo" href="/" aria-label="Go to home page">
           <img
@@ -13,36 +18,38 @@
         </a>
       </div>
       <div class="header__navigation">
-        <nav class="header__lang-menu" aria-label="Switch language">
-          <ul class="header__lang-list">
-            <li class="header__lang-item header__lang-item--activ" data-text="en">
-              <a class="header__lang-link" href="#"><span>en</span></a
-              >/
-            </li>
-            <li class="header__lang-item" data-text="ua">
-              <a class="header__lang-link" href="#">ua</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="header__menu" aria-label="Navigate main menu">
-          <ul class="header__menu-list">
-            <li class="header__menu-item">
-              <a class="header__menu-link menu-link" href="#">CATALOG</a>
-            </li>
-            <li class="header__menu-item">
-              <a class="header__menu-link menu-link" href="#">COLLECTIONS</a>
-            </li>
-            <li class="header__menu-item">
-              <a class="header__menu-link menu-link" href="#">ABOUT</a>
-            </li>
-            <li class="header__menu-item">
-              <a class="header__menu-link menu-link" href="#">BOOK AN APPOINTMENT</a>
-            </li>
-            <li class="header__menu-item">
-              <a class="header__menu-link menu-link" href="#">CONTACT</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="header__menu-container">
+          <nav class="header__lang-menu" aria-label="Switch language">
+            <ul class="header__lang-list">
+              <li class="header__lang-item header__lang-item--activ" data-text="en">
+                <a class="header__lang-link" href="#"><span>en</span></a
+                >/
+              </li>
+              <li class="header__lang-item" data-text="ua">
+                <a class="header__lang-link" href="#">ua</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="header__menu" aria-label="Navigate main menu">
+            <ul class="header__menu-list">
+              <li class="header__menu-item">
+                <a class="header__menu-link menu-link" href="#">CATALOG</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link menu-link" href="#">COLLECTIONS</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link menu-link" href="#">ABOUT</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link menu-link" href="#">BOOK AN APPOINTMENT</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link menu-link" href="#">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <ul class="header__actions">
           <li class="header__actions-item">
             <a

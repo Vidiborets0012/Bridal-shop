@@ -25,9 +25,18 @@ body {
 }
 
 .container {
+  $base-container-width: 1200px;
   max-width: calc($base-container-width + $global-container-padding-x * 2);
   margin-inline: auto;
   padding-inline: $global-container-padding-x;
+
+  @include tablet {
+    max-width: calc(640px + $global-container-padding-x * 2);
+  }
+
+  @include mobile {
+    max-width: calc(460px + $global-container-padding-x * 2);
+  }
 
   &--medium {
     max-width: calc($medium-container-width + $global-container-padding-x * 2);
@@ -62,6 +71,10 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 
   @include state-styles;
+
+  @include mobile-s {
+    height: 26px;
+  }
 }
 
 .menu-link {
