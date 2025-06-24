@@ -138,9 +138,9 @@
     border-bottom: $border $border-color;
     transition: color 0.3s ease, border-color 0.3s ease, outline 0.3s ease;
 
-    &:last-of-type {
+    /*&:last-of-type {
       margin-bottom: $gap-after-last;
-    }
+    }*/
 
     &::placeholder {
       color: $color;

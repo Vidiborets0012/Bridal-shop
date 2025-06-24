@@ -2,12 +2,6 @@
 @use 'mixins' as *;
 @use 'media' as *;
 
-@include desktop {
-  main {
-    display: none;
-  }
-}
-
 .promo {
   font-size: 11px;
   padding: 6px 5 8px;
@@ -381,14 +375,61 @@
   &__inner {
     display: flex;
     column-gap: 40px;
+
+    @include laptop {
+      column-gap: 25px;
+    }
+
+    @include laptop-m {
+      column-gap: 20px;
+      /* min-height: 434px;*/
+    }
   }
 
   &__img {
     max-width: 540px;
+
+    @include laptop {
+      max-width: 480px;
+    }
+
+    @include laptop-m {
+      max-width: 320px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include tablet-640 {
+      max-width: 220px;
+    }
+
+    @include mobile-470 {
+      max-width: 160px;
+    }
   }
 
   &__content {
-    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 40px;
+    padding: 5px 0;
+
+    @include laptop-m {
+      padding: 28px 0;
+    }
+
+    @include tablet-m {
+      row-gap: 20px;
+    }
+
+    @include mobile {
+      padding: 25px 0;
+    }
+
+    @include mobile-470 {
+      padding: 20px 0;
+    }
   }
 
   &__title {
@@ -396,13 +437,23 @@
   }
 
   &__text {
-    margin-bottom: 40px;
     font-size: 30px;
     color: $color-primary;
+
+    @include laptop-m {
+      font-size: 20px;
+    }
+
+    @include tablet-m {
+      font-size: 16px;
+    }
   }
 
   &__form {
-    @include form-input-style($gap-after-last: 40px);
+    display: flex;
+    flex-direction: column;
+
+    @include form-input-style;
   }
 
   &__input {
@@ -412,10 +463,18 @@
 
   &__input:not(:last-of-type) {
     margin-bottom: 20px;
+
+    @include mobile {
+      margin-bottom: 5px;
+    }
   }
 
   &__input:last-of-type {
     margin-bottom: 40px;
+
+    @include tablet-m {
+      margin-bottom: 20px;
+    }
   }
 
   &__button {
@@ -432,6 +491,10 @@
   &__form-caption {
     font-size: 11px;
     color: $color-primary;
+
+    @include mobile-470 {
+      font-size: 8px;
+    }
   }
 }
 

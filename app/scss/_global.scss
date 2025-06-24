@@ -223,6 +223,10 @@ body {
 
   &__body {
     padding: 0 40px;
+
+    @include laptop {
+      padding: 0;
+    }
   }
 }
 
@@ -231,6 +235,14 @@ body {
   @extend %lora-400;
   font-size: 45px;
   text-transform: uppercase;
+
+  @include laptop-m {
+    font-size: 30px;
+  }
+
+  @include tablet-m {
+    font-size: 20px;
+  }
 }
 
 .decor {
