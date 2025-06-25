@@ -4,14 +4,73 @@
       <div class="section__body">
         <div class="join-us__inner">
           <picture class="join-us__image">
-            <source srcset="images/join-us/join-img.avif" type="image/avif" />
-            <source srcset="images/join-us/join-img.webp" type="image/webp" />
+            <source
+              srcset="images/join-us/join-us-desktop.avif"
+              type="image/avif"
+              media="(min-width: 1000.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-desktop.webp"
+              type="image/webp"
+              media="(min-width: 1000.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-laptop.avif"
+              type="image/avif"
+              media="(min-width: 920.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-laptop.webp"
+              type="image/webp"
+              media="(min-width: 920.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-tablet.avif"
+              type="image/avif"
+              media="(min-width: 640.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-tablet.webp"
+              type="image/webp"
+              media="(min-width: 640.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-mobile.avif"
+              type="image/avif"
+              media="(min-width: 470.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-mobile.webp"
+              type="image/webp"
+              media="(min-width: 470.99px)"
+            />
+            <source
+              srcset="images/join-us/join-us-mobile-s.avif"
+              type="image/avif"
+              media="(min-width: 320px)"
+            />
+            <source
+              srcset="images/join-us/join-us-mobile-s.webp"
+              type="image/webp"
+              media="(min-width: 320px)"
+            />
             <img
               class="join-us__img"
-              src="images/join-us/join-img.jpg"
+              src="images/join-us/join-us-desktop.jpg"
+              srcset="
+                images/join-us/join-us-mobile-s.jpg 160w,
+                images/join-us/join-us-mobile.jpg   220w,
+                images/join-us/join-us-tablet.jpg   320w,
+                images/join-us/join-us-laptop.jpg   480w,
+                images/join-us/join-us-desktop.jpg  540w
+              "
+              sizes="(min-width: 1000.99px) 540px,
+                   (min-width: 920.99px) 480px,
+                   (min-width: 640.99px) 320px,
+                   (min-width: 470.99px) 220px,
+                   (min-width: 320px) 160px,
+                   160px"
               alt="Elegant woman in a wedding dress with translucent winged sleeves and decorated bodice"
-              width="540"
-              height="489"
               loading="lazy"
             />
           </picture>
