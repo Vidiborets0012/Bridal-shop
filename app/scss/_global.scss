@@ -240,8 +240,9 @@ body {
     font-size: 30px;
   }
 
-  @include tablet-m {
+  @include tablet-640 {
     font-size: 20px;
+    margin-bottom: 30px;
   }
 }
 
