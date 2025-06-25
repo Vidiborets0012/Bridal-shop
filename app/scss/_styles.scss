@@ -460,7 +460,7 @@
     border: none;
     border-bottom: $border $color-text-muted;
     z-index: 5;
-    transition: color 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+    transition: color 0.5s ease, border-color 0.5s ease;
 
     &::placeholder {
       @extend %opensans-400;
@@ -763,24 +763,11 @@
     justify-content: space-around;
     align-items: center;
     column-gap: 30px;
-    /*padding: 50px 0 36px;
-    margin-bottom: 50px;
-    border-bottom: $border $color-primary-light;*/
-
-    /*@include laptop {
-      margin-bottom: 20px;
-      padding: 0 0 30px;
-    }
-
-    @include laptop-m {
-      padding-top: 20px;
-    }*/
 
     @include tablet-m {
       flex-wrap: wrap;
       gap: 11px 35px;
       width: 286px;
-      /*padding-top: 30px;*/
     }
   }
 
@@ -910,13 +897,50 @@
   &__form {
     position: relative;
     width: 250px;
+  }
 
-    @include form-input-style(
-      $padding-top: 1px,
-      $padding-right: 30px,
-      $padding-bottom: 5px,
-      $border-color: $color-primary-light
-    );
+  &__form-input {
+    display: block;
+    width: 100%;
+    padding: 1px 30px 5px 0;
+    @extend %opensans-400;
+    color: $color-accent;
+    background-color: transparent;
+    border: none;
+    border-bottom: $border $color-primary-light;
+    z-index: 5;
+    transition: color 0.5s ease, border-color 0.5s ease;
+
+    &::placeholder {
+      @extend %opensans-400;
+      font-size: 16px;
+      color: $color-text-muted;
+    }
+
+    &:hover::placeholder {
+      color: $color-accent;
+    }
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+
+    &:focus::placeholder {
+      color: $color-accent;
+    }
+
+    &:active {
+      border-color: $color-light;
+    }
+
+    &:active::placeholder {
+      color: $color-light;
+    }
   }
 
   &__form-btn {
