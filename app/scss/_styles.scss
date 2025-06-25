@@ -273,15 +273,51 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @include laptop-m {
+      background-position: top;
+    }
+
+    @include tablet-640 {
+      background-position: left 35% top;
+    }
+
+    @include tablet-m {
+      background-position: left 40% top;
+    }
   }
 
   &__inner {
     padding: 115px 134px 20px;
+
+    @include laptop {
+      padding: 74px 53px 10px;
+    }
+
+    @include tablet-640 {
+      padding: 44px 18px 10px;
+    }
+
+    @include mobile-470 {
+      padding: 32px 0 10px;
+    }
   }
 
   &__content {
     max-width: 446px;
     margin-left: auto;
+
+    @include laptop-m {
+      max-width: 273px;
+    }
+
+    @include tablet-640 {
+      max-width: 240px;
+    }
+
+    @include tablet-640 {
+      max-width: 181px;
+    }
   }
 
   &__title {
@@ -289,10 +325,41 @@
     @extend %lora-400;
     font-size: 80px;
     line-height: 1.2;
+
+    @include laptop {
+      margin-bottom: 48px;
+    }
+
+    @include laptop-m {
+      font-size: 45px;
+    }
+
+    @include tablet-640 {
+      margin-bottom: 32px;
+      font-size: 30px;
+    }
+
+    @include mobile-470 {
+      margin-bottom: 20px;
+    }
   }
 
   &__link {
     padding: 12px 38px;
+
+    @include laptop-m {
+      padding: 12px 25px;
+    }
+
+    @include tablet-640 {
+      width: 100%;
+      padding: 12px;
+    }
+
+    @include tablet-640 {
+      padding: 5px;
+      font-size: 16px;
+    }
   }
 }
 
