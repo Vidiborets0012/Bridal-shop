@@ -263,6 +263,14 @@
 .hero {
   padding-bottom: 75px;
 
+  @include laptop {
+    padding-bottom: 50px;
+  }
+
+  @include mobile {
+    padding-bottom: 35px;
+  }
+
   &__body {
     min-height: 100vh;
     background-image: image-set(
@@ -889,6 +897,14 @@
 .our-advantages {
   &.section {
     padding-top: 158px;
+
+    @include laptop {
+      padding-top: 133px;
+    }
+
+    @include mobile {
+      padding-top: 69px;
+    }
   }
 
   &__wrapper {
@@ -1059,6 +1075,10 @@
 .our-blog {
   &.section {
     padding-bottom: 100px;
+
+    @include mobile {
+      padding-bottom: 70px;
+    }
   }
 
   &__inner {
