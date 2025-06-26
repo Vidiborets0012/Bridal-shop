@@ -312,20 +312,22 @@
             </div>
           </div>
         </section>
-        <!-- <section class="our-blog section">
+        <section class="our-blog section">
           <div class="container">
             <div class="section__body">
               <div class="our-blog__inner">
                 <div class="our-blog__decor decor"></div>
                 <div class="our-blog__content">
-                  <h2 class="title">OUR BLOG</h2>
-                  <div class="our-blog__text">
-                    <p>
-                      Luxurious Bridal Haven's blog is about inspiration and up-to-the-minute
-                      information from the wedding fashion world. Here you can find collection
-                      reviews, trunk shows announcements, guides, and lifehacks for wedding
-                      preparation.
-                    </p>
+                  <div class="our-blog__content-box">
+                    <h2 class="title">OUR BLOG</h2>
+                    <div class="our-blog__text">
+                      <p>
+                        Luxurious Bridal Haven's blog is about inspiration and up-to-the-minute
+                        information from the wedding fashion world. Here you can find collection
+                        reviews, trunk shows announcements, guides, and lifehacks for wedding
+                        preparation.
+                      </p>
+                    </div>
                   </div>
                   <a
                     class="our-blog__link button button--transparent"
@@ -351,9 +353,11 @@
                     <source srcset="images/our-blog/our-blog-2.avif" type="image/avif" />
                     <source srcset="images/our-blog/our-blog-2.webp" type="image/webp" />
                     <img
-                      src="images/our-blog/our-blog-2.jpg"
-                      width="329"
-                      height="227"
+                      src="images/our-blog/our-blog-2-laptop.jpg 246w,
+                      images/our-blog/our-blog-2.jpg"
+                      srcset="images/our-blog/our-blog-2.jpg 329w"
+                      sizes="(min-width: 1000.99px) 329px,
+                      (min-width: 920.99px) 246px"
                       alt="Photo of hands gently straightening delicate white lace on a wedding dress"
                       loading="lazy"
                     />
@@ -371,12 +375,59 @@
                 </div>
                 <div class="our-blog__box our-blog__box-bottom">
                   <picture class="our-blog__box-img">
-                    <source srcset="images/our-blog/our-blog-3.avif" type="image/avif" />
-                    <source srcset="images/our-blog/our-blog-3.webp" type="image/webp" />
+                    <source
+                      srcset="images/our-blog/our-blog-3.avif"
+                      type="image/avif"
+                      media="(min-width: 768.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3.webp"
+                      type="image/webp"
+                      media="(min-width: 768.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-tablet.avif"
+                      type="image/avif"
+                      media="(min-width: 640.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-tablet.webp"
+                      type="image/webp"
+                      media="(min-width: 640.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-mobile.avif"
+                      type="image/avif"
+                      media="(min-width: 479.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-mobile.webp"
+                      type="image/webp"
+                      media="(min-width: 479.99px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-mobile-s.avif"
+                      type="image/avif"
+                      media="(min-width: 320px)"
+                    />
+                    <source
+                      srcset="images/our-blog/our-blog-3-mobile-s.webp"
+                      type="image/webp"
+                      media="(min-width: 320px)"
+                    />
                     <img
                       src="images/our-blog/our-blog-3.jpg"
-                      width="448"
-                      height="197"
+                      srcset="
+                        images/our-blog/our-blog-3-mobile-s.jpg 160w,
+                        images/our-blog/our-blog-3-mobile.jpg   220w,
+                        images/our-blog/our-blog-3-tablet.jpg   383w,
+                        images/our-blog/our-blog-3.jpg          448w
+                      "
+                      sizes="
+                      (min-width: 768.99px) 448px,
+                      (min-width: 640.99px) 383px,
+                      (min-width: 480.99px) 220px,
+                      (min-width: 320px) 160px"
                       alt="Photo of a woman with blond hair wearing a delicate light dress with a corset and a puffy skirt"
                       loading="lazy"
                     />
@@ -395,7 +446,7 @@
               </div>
             </div>
           </div>
-        </section> -->
+        </section>
       </main>
 
       <!--=include footer.partial.html  -->
