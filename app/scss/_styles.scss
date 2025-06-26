@@ -717,6 +717,19 @@
     display: flex;
     justify-content: space-between;
     column-gap: 10px;
+
+    @include laptop-m {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include tablet {
+      column-gap: 0;
+    }
+
+    @media (max-width: 767px) {
+      column-gap: 20px;
+    }
   }
 
   &__decor {
@@ -732,6 +745,14 @@
   &__content {
     max-width: 404px;
     line-height: 1.4;
+
+    @include laptop {
+      max-width: 414px;
+    }
+
+    @include laptop-m {
+      max-width: none;
+    }
   }
 
   &__text {
@@ -739,8 +760,38 @@
     color: $color-text-muted;
   }
 
-  &__text p:not(:last-child) {
+  &__text-dots {
+    display: none;
+
+    @include mobile-470 {
+      display: inline;
+    }
+  }
+
+  &__text-text:not(:last-child) {
     margin-bottom: 20px;
+
+    @include mobile-470 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-text--laptop {
+    @include laptop-m {
+      display: none;
+    }
+  }
+
+  &__text-text--mobile {
+    @include tablet-640 {
+      display: none;
+    }
+  }
+
+  &__text-text-mobile-s {
+    @include mobile-470 {
+      display: none;
+    }
   }
 
   &__box {
@@ -750,6 +801,36 @@
     justify-content: space-between;
     align-items: center;
     row-gap: 40px;
+
+    @include laptop-m {
+      row-gap: 35px;
+    }
+
+    @include tablet-640 {
+      row-gap: 25px;
+    }
+  }
+
+  &__img {
+    img {
+      @include laptop {
+        width: 434px;
+        height: 554px;
+      }
+
+      @include laptop-m {
+        width: 100%;
+        height: 517px;
+      }
+
+      @include tablet-640 {
+        height: 319px;
+      }
+
+      @include mobile-470 {
+        height: 315px;
+      }
+    }
   }
 
   &__caption {
@@ -762,10 +843,46 @@
     text-align: left;
     background-color: #fff;
     border: 3px solid $color-primary-light;
+
+    @include laptop {
+      top: 312px;
+      left: -96px;
+    }
+
+    @include laptop-m {
+      top: 370px;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    @include tablet-640 {
+      top: 200px;
+      padding: 10px;
+      width: 177px;
+      font-size: 11px;
+    }
+
+    @include mobile-470 {
+      top: 220px;
+      width: 134px;
+    }
   }
 
   &__link {
     padding: 10px 93px;
+
+    @include tablet-640 {
+      width: 100%;
+      padding: 10px;
+      justify-content: center;
+    }
+  }
+
+  .section__body {
+    @include desktop-m {
+      padding: 0;
+    }
   }
 }
 
