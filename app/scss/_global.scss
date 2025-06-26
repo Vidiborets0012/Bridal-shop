@@ -224,7 +224,7 @@ body {
   &__body {
     padding: 0 40px;
 
-    @include laptop {
+    @include desktop-m {
       padding: 0;
     }
   }

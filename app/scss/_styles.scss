@@ -899,6 +899,23 @@
     position: relative;
     display: flex;
     column-gap: 70px;
+
+    @media (max-width: 1140px) {
+      column-gap: 34px;
+    }
+
+    @media (max-width: 998px) {
+      column-gap: 24px;
+    }
+
+    @include tablet-640 {
+      column-gap: 20px;
+    }
+
+    @include mobile-470 {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__decor {
@@ -907,20 +924,88 @@
     width: calc(326px / 1120px * 100%);
     aspect-ratio: calc(326px / 548px);
     background-image: url('../images/our-advantages/our-advantages-decor.svg');
+
+    @include desktop-m {
+      right: -10px;
+    }
+
+    @include tablet {
+      right: -10px;
+      bottom: 190px;
+    }
   }
 
   &__img {
     margin-top: -83px;
+
+    img {
+      width: 378px;
+      height: 460px;
+    }
+
+    @include laptop-m {
+      img {
+        width: 320px;
+      }
+    }
+
+    @include tablet-640 {
+      img {
+        width: 220px;
+        height: 344px;
+      }
+    }
+
+    @include tablet-640 {
+      margin-top: -34px;
+    }
+
+    @include mobile-470 {
+      img {
+        width: 340px;
+        height: 185px;
+      }
+    }
+
+    @include mobile-470 {
+      margin-top: -115px;
+    }
   }
 
   &__content {
     padding: 64px 0;
+
+    @media (max-width: 998px) {
+      padding-top: 24px;
+      padding-bottom: 23px;
+    }
+
+    @include mobile-470 {
+      padding: 20px 0;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
   }
 
   &__list {
     column-count: 2;
     column-gap: 80px;
     margin-bottom: -30px;
+
+    @include desktop-m {
+      column-gap: 40px;
+    }
+
+    @media (max-width: 998px) {
+      column-count: 1;
+    }
+
+    @include mobile-470 {
+      margin-bottom: 0;
+    }
   }
 
   &__item {
@@ -939,6 +1024,34 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include mobile-470 {
+        left: 50%;
+        top: 0;
+        transform: translateY(0);
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 998px) {
+      margin-bottom: 20px;
+    }
+
+    @include tablet-640 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      padding-left: 35px;
+    }
+
+    @include mobile-470 {
+      padding-left: 0;
+      padding-top: 28px;
+    }
+  }
+
+  &__item:last-of-type {
+    @media (max-width: 998px) {
+      margin-bottom: 0;
     }
   }
 }
