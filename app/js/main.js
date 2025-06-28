@@ -1,5 +1,5 @@
-const burgerMenuButoon = document.querySelector('.header__burger-menu');
-const burgerMenu = document.querySelector('.header__menu-container');
+/*const burgerMenuButoon = document.querySelector('.header__burger-menu');
+const burgerMenu = document.querySelector('.header__menu-container');*/
 
 burgerMenuButoon.addEventListener('click', () => {
   burgerMenu.classList.toggle('is-active');
