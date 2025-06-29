@@ -8,6 +8,7 @@ const burgerMenu = document.querySelector('.header__menu-container');*/
 const burgerMenuButton = document.querySelector('.burger-menu');
 const burgerMenuBars = document.querySelectorAll('.burger-menu__bar');
 const menuContainer = document.getElementById('headerMenuContainer');
+const bodyElement = document.body;
 
 burgerMenuButton.addEventListener('click', () => {
   burgerMenuButton.classList.toggle('is-active');
@@ -19,9 +20,11 @@ burgerMenuButton.addEventListener('click', () => {
   if (burgerMenuButton.classList.contains('is-active')) {
     burgerMenuButton.setAttribute('aria-expanded', 'true');
     menuContainer.setAttribute('aria-hidden', 'false');
+    bodyElement.classList.add('no-scroll');
   } else {
     burgerMenuButton.setAttribute('aria-expanded', 'false');
     menuContainer.setAttribute('aria-hidden', 'true');
+    bodyElement.classList.remove('no-scroll');
   }
 });
 
