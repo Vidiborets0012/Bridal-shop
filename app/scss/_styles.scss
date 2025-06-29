@@ -215,9 +215,10 @@
       opacity: 0;
       transform: translateY(-200%);
 
-      transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s;
+      transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s, visibility 0s 0.3s;
 
       pointer-events: none;
+      visibility: hidden;
     }
   }
 
@@ -225,9 +226,10 @@
     opacity: 1;
     transform: translateY(0);
 
-    transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0s;
+    transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0s, visibility 0s 0s;
 
     pointer-events: auto;
+    visibility: visible;
   }
 
   &__menu {
