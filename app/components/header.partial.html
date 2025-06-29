@@ -5,6 +5,8 @@
         class="header__burger-menu burger-menu"
         type="button"
         aria-label="open language and main navigation"
+        aria-expanded="false"
+        aria-controls="headerMenuContainer"
       >
         <span class="burger-menu__bar"></span>
         <span class="burger-menu__bar"></span>
@@ -22,7 +24,7 @@
         </a>
       </div>
       <div class="header__navigation">
-        <div class="header__menu-container">
+        <div class="header__menu-container" id="headerMenuContainer" aria-hidden="true">
           <nav class="header__lang-menu" aria-label="Switch language">
             <ul class="header__lang-list">
               <li class="header__lang-item header__lang-item--activ" data-text="en">

@@ -1,8 +1,28 @@
 /*const burgerMenuButoon = document.querySelector('.header__burger-menu');
 const burgerMenu = document.querySelector('.header__menu-container');*/
 
-burgerMenuButoon.addEventListener('click', () => {
+/*burgerMenuButoon.addEventListener('click', () => {
   burgerMenu.classList.toggle('is-active');
+});*/
+
+const burgerMenuButton = document.querySelector('.burger-menu');
+const burgerMenuBars = document.querySelectorAll('.burger-menu__bar');
+const menuContainer = document.getElementById('headerMenuContainer');
+
+burgerMenuButton.addEventListener('click', () => {
+  burgerMenuButton.classList.toggle('is-active');
+  menuContainer.classList.toggle('is-active');
+  burgerMenuBars.forEach(bar => {
+    bar.classList.toggle('is-active');
+  });
+
+  if (burgerMenuButton.classList.contains('is-active')) {
+    burgerMenuButton.setAttribute('aria-expanded', 'true');
+    menuContainer.setAttribute('aria-hidden', 'false');
+  } else {
+    burgerMenuButton.setAttribute('aria-expanded', 'false');
+    menuContainer.setAttribute('aria-hidden', 'true');
+  }
 });
 
 const swiper = new Swiper('.accessories__slider', {

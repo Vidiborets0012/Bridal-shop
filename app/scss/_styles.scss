@@ -136,6 +136,13 @@
     cursor: pointer;
     transition: scale 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 
+    &.is-active {
+      align-items: center;
+      margin: 0;
+      border: $border $color-primary;
+      background-color: $color-light;
+    }
+
     @include laptop-m {
       position: relative;
       display: flex;
@@ -146,6 +153,20 @@
       width: 30px;
       height: 2px;
       background-color: $color-primary;
+
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &.is-active:first-child {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      &.is-active:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.is-active:last-child {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
     }
 
     @include hover-effect {
@@ -191,13 +212,22 @@
       text-align: center;
       background-color: $color-primary-light;
       z-index: 5;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(-200%);
+
+      transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s;
+
+      pointer-events: none;
     }
   }
 
   &__menu-container.is-active {
+    opacity: 1;
     transform: translateY(0);
+
+    transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0s;
+
+    pointer-events: auto;
   }
 
   &__menu {
