@@ -10,7 +10,7 @@ const burgerMenuBars = document.querySelectorAll('.burger-menu__bar');
 const menuContainer = document.getElementById('headerMenuContainer');
 const bodyElement = document.body;
 
-burgerMenuButton.addEventListener('click', () => {
+/*burgerMenuButton.addEventListener('click', () => {
   burgerMenuButton.classList.toggle('is-active');
   menuContainer.classList.toggle('is-active');
   burgerMenuBars.forEach(bar => {
@@ -25,6 +25,70 @@ burgerMenuButton.addEventListener('click', () => {
     burgerMenuButton.setAttribute('aria-expanded', 'false');
     menuContainer.setAttribute('aria-hidden', 'true');
     bodyElement.classList.remove('no-scroll');
+  }
+});*/
+
+function closeMenu() {
+  if (menuContainer.classList.contains('is-active')) {
+    burgerMenuButton.classList.remove('is-active');
+    menuContainer.classList.remove('is-active');
+    burgerMenuBars.forEach(bar => {
+      bar.classList.remove('is-active');
+    });
+
+    burgerMenuButton.setAttribute('aria-expanded', 'false');
+    menuContainer.setAttribute('aria-hidden', 'true');
+    bodyElement.classList.remove('no-scroll');
+  }
+}
+
+function openMenu() {
+  burgerMenuButton.classList.add('is-active');
+  menuContainer.classList.add('is-active');
+  burgerMenuBars.forEach(bar => {
+    bar.classList.add('is-active');
+  });
+
+  burgerMenuButton.setAttribute('aria-expanded', 'true');
+  menuContainer.setAttribute('aria-hidden', 'false');
+  bodyElement.classList.add('no-scroll');
+}
+
+burgerMenuButton.addEventListener('click', event => {
+  event.stopPropagation();
+
+  if (menuContainer.classList.contains('is-active')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+menuContainer.addEventListener('click', event => {
+  const clickedElement = event.target;
+  const isLink = clickedElement.tagName === 'A' || clickedElement.closest('a');
+
+  if (!isLink) {
+    closeMenu();
+  }
+});
+
+document.addEventListener('click', event => {
+  const isClickInsideMenu = menuContainer.contains(event.target);
+  const isClickOnBurgerButton = burgerMenuButton.contains(event.target);
+
+  if (
+    menuContainer.classList.contains('is-active') &&
+    !isClickInsideMenu &&
+    !isClickOnBurgerButton
+  ) {
+    closeMenu();
+  }
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuContainer.classList.contains('is-active')) {
+    closeMenu();
   }
 });
 
