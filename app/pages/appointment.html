@@ -29,55 +29,114 @@
                   <p class="appointment__form-title">CONTACT INFORMATION</p>
                   <p class="appointment__form-text">Fill in your contact details</p>
 
-                  <label class="visually-hidden" for="user-first-name">First name</label>
-                  <input
-                    class="appointment__form-input"
-                    id="user-first-name"
-                    name="user-first-name"
-                    type="text"
-                    placeholder="First name"
-                    aria-label="First name"
-                  />
+                  <div class="appointment__form-inputs">
+                    <label class="visually-hidden" for="user-first-name">First name</label>
+                    <input
+                      class="appointment__form-input"
+                      id="user-first-name"
+                      name="user-first-name"
+                      type="text"
+                      placeholder="First name"
+                      aria-label="First name"
+                    />
 
-                  <label class="visually-hidden" for="user-last-name">Last name</label>
-                  <input
-                    class="appointment__form-input"
-                    id="user-last-name"
-                    name="user-last-name"
-                    type="text"
-                    placeholder="Last name"
-                    aria-label="Last name"
-                  />
+                    <label class="visually-hidden" for="user-last-name">Last name</label>
+                    <input
+                      class="appointment__form-input"
+                      id="user-last-name"
+                      name="user-last-name"
+                      type="text"
+                      placeholder="Last name"
+                      aria-label="Last name"
+                    />
 
-                  <label class="visually-hidden" for="user-email">Email</label>
-                  <input
-                    class="appointment__form-input"
-                    id="user-email"
-                    name="user-email"
-                    type="email"
-                    placeholder="Email"
-                    aria-label="Email"
-                  />
+                    <label class="visually-hidden" for="user-email">Email</label>
+                    <input
+                      class="appointment__form-input"
+                      id="user-email"
+                      name="user-email"
+                      type="email"
+                      placeholder="Email"
+                      aria-label="Email"
+                    />
 
-                  <label class="visually-hidden" for="user-mobile">Mobile</label>
-                  <input
-                    class="appointment__form-input"
-                    id="user-mobile"
-                    name="user-mobile"
-                    type="tel"
-                    placeholder="Mobile"
-                    aria-label="Mobile"
-                  />
+                    <label class="visually-hidden" for="user-mobile">Mobile</label>
+                    <input
+                      class="appointment__form-input"
+                      id="user-mobile"
+                      name="user-mobile"
+                      type="tel"
+                      placeholder="Mobile"
+                      aria-label="Mobile"
+                    />
+                  </div>
 
-                  <button class="appointment__form-btn button-dark" type="submit">SEND</button>
+                  <button class="appointment__form-btn button button--accent" type="submit">
+                    SEND
+                  </button>
                 </form>
-                <picture>
-                  <source srcset="images/appointment/appointment.avif" type="image/avif" />
-                  <source srcset="images/appointment/appointment.webp" type="image/webp" />
+                <picture class="appointment__image">
+                  <source
+                    srcset="images/appointment/appointment-desktop.webp"
+                    type="image/webp"
+                    media="(min-width: 1000.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-laptop.avif"
+                    type="image/avif"
+                    media="(min-width: 768.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-laptop.webp"
+                    type="image/webp"
+                    media="(min-width: 768.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-tablet.avif"
+                    type="image/avif"
+                    media="(min-width: 480.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-tablet.webp"
+                    type="image/webp"
+                    media="(min-width: 480.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-mobile.avif"
+                    type="image/avif"
+                    media="(min-width: 470.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-mobile.webp"
+                    type="image/webp"
+                    media="(min-width: 470.99px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-mobile-s.avif"
+                    type="image/avif"
+                    media="(min-width: 320px)"
+                  />
+                  <source
+                    srcset="images/appointment/appointment-mobile-s.webp"
+                    type="image/webp"
+                    media="(min-width: 320px)"
+                  />
                   <img
-                    src="images/appointment/appointment.jpg"
-                    width="540"
-                    height="689"
+                    class="appointment__img"
+                    src="images/appointment/appointment-desktop.jpg"
+                    srcset="
+                      images/appointment/appointment-mobile-s.jpg 339w,
+                      images/appointment/appointment-mobile.jpg   220w,
+                      images/appointment/appointment-tablet.jpg   308w,
+                      images/appointment/appointment-laptop.jpg   470w,
+                      images/appointment/appointment-desktop.jpg  540w
+                    "
+                    sizes="(min-width: 1000.99px) 540px,
+                         (min-width: 768.99px) 470px,
+                         (min-width: 480.99px) 308px,
+                         (min-width: 470.99px) 220px,
+                         (min-width: 320px) 339px,
+                         339px"
                     loading="lazy"
                     alt="Photo of an elegant woman with blond hair in a white dress with a corset, puffed sleeves and a long train, standing near an old door with stucco molding"
                   />
