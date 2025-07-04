@@ -2557,17 +2557,41 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
+
+    @include tablet-m {
+      margin-bottom: 30px;
+    }
   }
 
   &__header-title {
     @extend %lora-400;
     font-size: 64px;
+
+    @include laptop-m {
+      font-size: 38px;
+    }
+
+    @include tablet-m {
+      font-size: 30px;
+    }
+
+    @include mobile-470 {
+      font-size: 24px;
+    }
   }
 
   &__header-link {
     font-size: 24px;
     color: rgba($color-accent, 0.4);
     border-bottom: 1px solid $color-accent;
+
+    @include laptop-m {
+      font-size: 16px;
+    }
+
+    @include mobile-470 {
+      font-size: 14px;
+    }
   }
 
   &__slider-container {
@@ -2577,6 +2601,10 @@
     padding-left: 40px;
     padding-bottom: 52px;
     margin: 0 auto 24px;
+
+    @include laptop-m {
+      padding-bottom: 120px;
+    }
   }
 
   &__slide {
@@ -2596,6 +2624,10 @@
     align-items: center;
     column-gap: 16px;
     max-width: 186px;
+
+    @include laptop-m {
+      bottom: 60px;
+    }
   }
 
   &__arrow {
@@ -2638,6 +2670,14 @@
   &__item {
     padding: 40px 50px;
     border: 1px solid rgba($color-dark, 0.15);
+
+    @include tablet-m {
+      padding: 20px 20px;
+    }
+
+    @include mobile {
+      padding: 10px 10px;
+    }
   }
 
   &__item-date {
@@ -2657,6 +2697,14 @@
   &__item-text {
     max-width: 1220px;
     opacity: 0.8;
+
+    @include tablet-m {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__item-text:not(:last-child) {
