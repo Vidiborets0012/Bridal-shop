@@ -3221,16 +3221,33 @@
     align-items: center;
     padding-top: 18px;
     margin-bottom: 48px;
+
+    @include tablet-640 {
+      margin-bottom: 20px;
+    }
   }
 
   &__header-title {
     @extend %lora-400;
     font-size: 64px;
+
+    @include tablet-640 {
+      font-size: 46px;
+    }
   }
 
   &__main {
     display: flex;
     column-gap: 80px;
+
+    @media (max-width: 1360px) {
+      column-gap: 40px;
+    }
+
+    @include laptop {
+      flex-direction: column-reverse;
+      row-gap: 40px;
+    }
   }
 
   &__info {
@@ -3239,6 +3256,18 @@
 
   &__details {
     min-width: 616px;
+
+    @media (max-width: 1360px) {
+      min-width: 460px;
+    }
+
+    @include desktop {
+      min-width: 380px;
+    }
+
+    @include mobile-470 {
+      min-width: auto;
+    }
   }
 
   &__details-title {
@@ -3247,12 +3276,20 @@
     padding-bottom: 20px;
     margin-bottom: 32px;
     border-bottom: 1px solid rgba($color-accent, 0.2);
+
+    @include tablet-640 {
+      font-size: 32px;
+    }
   }
 
   &__details-main {
     display: flex;
     flex-direction: column;
     row-gap: 123px;
+
+    @include laptop {
+      row-gap: 30px;
+    }
   }
 }
 
@@ -3262,10 +3299,18 @@
   row-gap: 32px;
   max-width: 824px;
 
+  @include laptop {
+    max-width: 100%;
+  }
+
   &__controls {
     display: flex;
     flex-direction: column;
     row-gap: 80px;
+
+    @include tablet-640 {
+      row-gap: 40px;
+    }
   }
 
   &__control {
@@ -3283,6 +3328,10 @@
     @extend %lora-400;
     font-size: 40px;
     border-bottom: 1px solid rgba($color-accent, 0.2);
+
+    @include tablet-640 {
+      font-size: 32px;
+    }
   }
 
   &__text {
@@ -3304,10 +3353,19 @@
   &--column-2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+
+    @include tablet-640 {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
   }
 
   &--column-1 {
     row-gap: 24px;
+
+    @include tablet-640 {
+      gap: 20px;
+    }
   }
 
   &__label {
@@ -3324,6 +3382,11 @@
       height: 20px;
       right: 34px;
       top: 65px;
+
+      @include mobile-470 {
+        right: 18px;
+        top: 52px;
+      }
     }
   }
 
@@ -3355,9 +3418,41 @@
 
   &__input {
     padding: 26px 32px;
+    transition: color 0.5s ease, border-color 0.5s ease, opacity 0.5s ease;
+
+    @include mobile-470 {
+      padding: 12px;
+    }
 
     &::placeholder {
       opacity: 0.4;
+    }
+
+    &:hover::placeholder {
+      color: $color-accent;
+      opacity: 1;
+    }
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+
+    &:focus::placeholder {
+      color: $color-accent;
+      opacity: 1;
+    }
+
+    &:active {
+      border-color: $color-dark;
+    }
+
+    &:active::placeholder {
+      color: $color-dark;
     }
   }
 
@@ -3365,6 +3460,10 @@
     padding: 26px 64px 26px 32px;
     color: rgba($color-accent, 0.4);
     appearance: none;
+
+    @include mobile-470 {
+      padding: 12px 44px 12px 12px;
+    }
   }
 
   &__radio {
@@ -3456,6 +3555,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24px;
+
+    @include tablet-640 {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
   }
 }
 
@@ -3484,6 +3588,10 @@
     flex-direction: column;
     row-gap: 30px;
     margin-inline: 10px;
+
+    @include mobile-470 {
+      margin-inline: 0;
+    }
   }
 
   &__item {
@@ -3491,6 +3599,10 @@
     column-gap: 20px;
     padding-bottom: 30px;
     border-bottom: $border $color-primary-light;
+
+    @include mobile-470 {
+      column-gap: 10px;
+    }
   }
 
   &__image {
@@ -3537,6 +3649,12 @@
     @extend %opensans-700;
   }
 
+  &__item-subtotal-description {
+    @include mobile-470 {
+      margin: 0;
+    }
+  }
+
   &__btn-del {
     position: absolute;
     right: 0;
@@ -3551,6 +3669,10 @@
 .order {
   padding: 60px 40px;
   border: 1px solid rgba($color-accent, 0.2);
+
+  @include mobile-470 {
+    padding: 20px 10px;
+  }
 
   &__title {
     @extend %lora-400;
@@ -3584,6 +3706,10 @@
     padding: 30px;
     width: 100%;
     justify-content: center;
+
+    @include mobile-470 {
+      padding: 12px;
+    }
   }
 }
 
