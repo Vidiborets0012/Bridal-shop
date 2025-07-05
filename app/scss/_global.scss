@@ -352,6 +352,11 @@ body {
     width: 90px;
     height: 90px;
     background-image: url('../images/page-404/arrow-in-circle.svg');
+
+    @include tablet {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   &--moving-decor {
@@ -363,6 +368,11 @@ body {
     width: 87px;
     height: 87px;
     background-image: url('../images/page-404/moving-decor.svg');
+
+    @include tablet {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 

@@ -2194,12 +2194,66 @@
     display: flex;
     justify-content: space-between;
     column-gap: 14px;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      align-items: center;
+      row-gap: 20px;
+    }
   }
 
   &__content-box {
     display: flex;
     column-gap: 35px;
     padding-bottom: 57px;
+
+    @media (max-width: 1280px) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    flex-shrink: 0;
+
+    @media (max-width: 1280px) {
+      flex-shrink: 1;
+    }
+
+    @include laptop {
+      flex-shrink: 0;
+    }
+
+    @include tablet {
+      flex-shrink: 1;
+    }
+
+    img {
+      height: auto;
+    }
+  }
+
+  &__image-small {
+    img {
+      @include laptop {
+        width: 120px;
+      }
+    }
+
+    @include laptop-m {
+      display: none;
+    }
+  }
+
+  &__image-big {
+    img {
+      @include laptop {
+        width: 360px;
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+    }
   }
 
   &__content {
@@ -2211,20 +2265,66 @@
     max-width: 731px;
     @extend %lora-400;
     text-transform: uppercase;
+
+    @media (max-width: 1280px) {
+      max-width: none;
+      padding-top: 60px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include laptop {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    @include tablet {
+      padding: 0;
+      row-gap: 40px;
+    }
   }
 
   &__title {
     font-size: 160px;
     font-weight: 400;
     line-height: 1.1;
+
+    @media (max-width: 1280px) {
+      font-size: 140px;
+    }
+
+    @include desktop-m {
+      font-size: 128px;
+    }
+
+    @include mobile-470 {
+      font-size: 120px;
+    }
   }
 
   &__link {
     font-size: 48px;
     line-height: 1.2;
-    transition: opacity 0.2s ease;
+    padding: 10px;
+    margin: -10px;
 
-    @include pseudo-button($display: flex, $opacity: 0.6);
+    @media (max-width: 1280px) {
+      max-width: 480px;
+      font-size: 40px;
+    }
+
+    @include laptop-m {
+      font-size: 34px;
+    }
+
+    @include mobile-470 {
+      font-size: 32px;
+    }
+  }
+
+  .button--transparent {
+    border: $border transparent;
+    color: $color-accent;
   }
 }
 
@@ -2242,6 +2342,10 @@
     text-transform: uppercase;
 
     animation: moving 20s linear infinite;
+
+    @include tablet {
+      font-size: 120px;
+    }
   }
 }
 
