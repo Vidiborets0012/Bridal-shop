@@ -1943,10 +1943,37 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @include laptop {
+      background-image: image-set(
+        url('/images/collections/collections-laptop-bg.avif') type('image/avif'),
+        url('/images/collections/collections-laptop-bg.webp') type('image/webp'),
+        url('/images/collections/collections-laptop-bg.jpg')
+      );
+    }
+
+    @include tablet {
+      background-image: image-set(
+        url('/images/collections/collections-tablet-bg.avif') type('image/avif'),
+        url('/images/collections/collections-tablet-bg.webp') type('image/webp'),
+        url('/images/collections/collections-tablet-bg.jpg')
+      );
+    }
+
+    @include mobile {
+      background-image: image-set(
+        url('/images/collections/collections-mobile-bg.avif') type('image/avif'),
+        url('/images/collections/collections-mobile-bg.webp') type('image/webp'),
+        url('/images/collections/collections-mobile-bg.jpg')
+      );
+    }
   }
 
   &__body {
     position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow-x: clip;
   }
 
   &__decor {
@@ -1959,17 +1986,49 @@
     z-index: 1;
   }
 
+  &__container {
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto;
+
+    @include mobile {
+      max-width: 480px;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    @include mobile-470 {
+      overflow-x: auto;
+    }
+
+    @include mobile-s {
+      max-width: 340px;
+    }
+  }
+
   &__title {
     margin-bottom: 50px;
     @extend %lora-400;
     font-size: 45px;
     text-align: center;
     text-transform: uppercase;
+
+    @include mobile {
+      font-size: 30px;
+    }
+
+    @include mobile-s {
+      margin-bottom: 30px;
+    }
   }
 
   figure {
     position: relative;
     margin: 0;
+
+    @include laptop {
+      height: 100%;
+    }
   }
 
   &__list {
@@ -1977,19 +2036,129 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 50px;
+
+    @include laptop {
+      padding: 0 35px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet {
+      padding: 0 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      padding: 0;
+      margin-inline: -60px;
+      grid-template-columns: repeat(2, 270px);
+    }
+
+    @include mobile-470 {
+      grid-template-columns: repeat(1, 1fr);
+      margin-inline: 0;
+    }
   }
 
   &__item {
     position: relative;
+
+    @include mobile-470 {
+      margin-inline: 35px;
+    }
   }
 
-  &__item-big {
+  /*&__item-big {
     grid-row: span 2;
     grid-column: span 2;
+  }*/
+
+  &__item-big-one {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+
+    @include laptop {
+      grid-column: 2 / 4;
+      grid-row: 2 / 4;
+    }
+
+    @include tablet {
+      grid-column: 1 / -1;
+      grid-row: 3 / 5;
+    }
+
+    @include mobile-470 {
+      margin-inline: 0;
+    }
+  }
+
+  &__item-big-two {
+    grid-column: 3 / 5;
+    grid-row: 4 / 6;
+
+    @include laptop {
+      grid-column: 2 / 4;
+      grid-row: 5 / 7;
+    }
+
+    @include tablet {
+      grid-column: 1 / -1;
+      grid-row: 7 / 9;
+    }
+
+    @include mobile-470 {
+      display: none;
+    }
   }
 
   &__item--offset {
-    margin-top: -130px;
+    /*margin-top: -130px;*/
+    margin-top: -47.9%;
+
+    @include laptop {
+      margin-top: 0;
+    }
+  }
+
+  &__item--laptop {
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__item--tablet {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__figure {
+    @include mobile-470 {
+    }
+  }
+
+  &__img {
+    height: auto;
+
+    @include laptop {
+      width: 100%;
+    }
+  }
+
+  &__image--big {
+    @include laptop {
+      height: 100%;
+    }
+  }
+
+  &__img--big {
+    @include laptop {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mobile-470 {
+      height: 782px;
+    }
   }
 
   &__item-text {
@@ -1997,12 +2166,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 12px;
+    padding: 12px 2px;
     @extend %lora-400;
     text-align: center;
     text-transform: uppercase;
     color: $color-light;
     background-color: $color-accent;
+  }
+
+  .breadcrumbs {
+    @include laptop {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
   }
 }
 
