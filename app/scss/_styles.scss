@@ -3250,12 +3250,33 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
+
+    @include laptop {
+      padding-inline: 35px;
+    }
+
+    @include laptop-m {
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+
+    @include tablet {
+      margin-bottom: 50px;
+      padding-inline: 0;
+    }
+
+    @include mobile-470 {
+    }
   }
 
   &__view-mode {
     display: flex;
     align-items: center;
     column-gap: 30px;
+
+    @include laptop {
+      display: none;
+    }
   }
 
   &__view-label {
@@ -3266,6 +3287,12 @@
   &__title {
     @extend %lora-400;
     font-size: 45px;
+
+    @include laptop-m {
+      width: 100%;
+      order: -1;
+      text-align: center;
+    }
   }
 
   &__select-wrapper {
@@ -3309,6 +3336,10 @@
 
   &__filter {
     width: 270px;
+
+    @include laptop {
+      display: none;
+    }
   }
 
   &__filter-form {
@@ -3333,6 +3364,22 @@
 
   &__cards-inner {
     padding-bottom: 100px;
+
+    @include laptop {
+      padding-inline: 35px;
+    }
+
+    @include tablet {
+      padding-inline: 30px;
+    }
+
+    @include tablet-640 {
+      padding-inline: 45px;
+    }
+
+    @include mobile-470 {
+      width: 100%;
+    }
   }
 
   &__cards-list {
@@ -3340,6 +3387,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 50px 40px;
     padding-bottom: 50px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-470 {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
 
@@ -3357,6 +3412,32 @@
 
   &__price {
     @extend %opensans-700;
+  }
+}
+
+.catalog-popup {
+  display: none;
+
+  @include laptop {
+    display: block;
+    position: relative;
+    padding: 10px 20px 10px 0;
+    font-size: 16px;
+    color: $color-text-muted;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url(../images/catalog/catalog-arrow-down.svg);
+      width: 14px;
+      height: 9px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
   }
 }
 
