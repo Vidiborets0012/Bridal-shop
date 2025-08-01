@@ -3542,11 +3542,12 @@
   }
 
   &__filter {
+    position: relative;
     width: 270px;
 
-    @include laptop {
+    /*@include laptop {
       display: none;
-    }
+    }*/
   }
 
   &__filter-form {
@@ -3624,6 +3625,7 @@
 
 .catalog-popup {
   display: none;
+  cursor: pointer;
 
   @include laptop {
     display: block;

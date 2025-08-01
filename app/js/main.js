@@ -26,6 +26,34 @@ document.addEventListener('keydown', e => {
   }
 });
 
+const openBtnPopup = document.querySelector('.catalog-popup');
+const popup = document.querySelector('.popup');
+const popupOverlay = document.querySelector('.popup__overlay');
+const closeBtnPopup = document.querySelector('.close-popup');
+
+function openPopup() {
+  popup.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('no-scroll');
+}
+
+function closePopup() {
+  popup.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('no-scroll');
+}
+
+if (popupOverlay) {
+  popupOverlay.addEventListener('click', closePopup);
+}
+
+openBtnPopup.addEventListener('click', openPopup);
+closeBtnPopup.addEventListener('click', closePopup);
+
+document.addEventListener('keydown', e => {
+  if ((e.key = 'Escape' && popup.getAttribute('aria-hidden') === 'false')) {
+    closePopup();
+  }
+});
+
 const breakpoint = window.matchMedia('(min-width: 680px)');
 let sliderProduct = null;
 

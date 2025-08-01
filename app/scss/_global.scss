@@ -790,3 +790,52 @@ body {
 .close-modal {
   cursor: pointer;
 }
+
+.popup {
+  @include laptop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: rgba($color-text-muted, 0.8);
+
+    &[aria-hidden='false'] {
+      display: flex;
+    }
+
+    &__overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+    }
+
+    &__content {
+      position: relative;
+      background-color: $color-light;
+      z-index: 101;
+      left: 55px;
+      top: 100px;
+      overflow: auto;
+    }
+  }
+
+  @include mobile-470 {
+    &__content {
+      left: 45px;
+    }
+  }
+}
+
+.close-popup {
+  display: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  @include laptop {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+  }
+}
