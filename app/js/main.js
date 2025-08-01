@@ -1,3 +1,31 @@
+const openBtnModal = document.querySelector('.open-modal');
+const modal = document.querySelector('.modal');
+const modalOverlay = document.querySelector('.modal__overlay');
+const closeBtnModal = document.querySelector('.close-modal');
+
+function openModal() {
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('no-scroll');
+}
+
+function closeModal() {
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('no-scroll');
+}
+
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', closeModal);
+}
+
+openBtnModal.addEventListener('click', openModal);
+closeBtnModal.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', e => {
+  if ((e.key = 'Escape' && modal.getAttribute('aria-hidden') === 'false')) {
+    closeModal();
+  }
+});
+
 const breakpoint = window.matchMedia('(min-width: 680px)');
 let sliderProduct = null;
 
