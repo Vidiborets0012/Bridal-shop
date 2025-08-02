@@ -872,7 +872,19 @@ body {
 }
 
 .close-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  margin: -4px;
+  color: $color-primary;
+  border: $border transparent;
+  border-radius: 50%;
+  background-color: transparent;
   cursor: pointer;
+
+  transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease, scale 0.3s ease,
+    rotate 0.3s ease;
 }
 
 .popup {
@@ -912,14 +924,40 @@ body {
 
 .close-popup {
   display: none;
-  padding: 0;
-  border: none;
+  padding: 4px;
+  margin: -4px;
+  color: $color-primary;
+  border: $border transparent;
+  border-radius: 50%;
+  background-color: transparent;
   cursor: pointer;
+
+  transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease, scale 0.3s ease,
+    rotate 0.3s ease;
 
   @include laptop {
     position: absolute;
     top: 8px;
     right: 8px;
     display: flex;
+  }
+
+  @include hover-effect {
+    scale: 1.1;
+    rotate: 180deg;
+    background-color: $color-primary-light;
+    border-color: $color-primary;
+  }
+
+  @include focus-visible {
+    scale: 1.1;
+    background-color: $color-primary-light;
+    border-color: $color-primary;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-primary-light;
+    scale: 0.9;
   }
 }
