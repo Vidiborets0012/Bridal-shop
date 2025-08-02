@@ -590,6 +590,14 @@ body {
     @extend %opensans-400;
     line-height: 1.38;
     text-transform: uppercase;
+
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus-within,
+    &:has(.form-control__input:checked) {
+      color: $color-text-muted;
+    }
   }
 
   &__label--before {
@@ -676,6 +684,62 @@ body {
       border-radius: 50%;
       transform: translate(-50%, -50%);
     }
+
+    & + .form-control__label-mark--checkbox {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    &:hover + .form-control__label-mark--checkbox {
+      border-color: $color-primary-light;
+    }
+
+    &:checked:hover + .form-control__label-mark--checkbox {
+      border-color: $color-primary;
+    }
+
+    &:focus + .form-control__label-mark--checkbox {
+      outline: none;
+      border-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    }
+
+    &:checked + .form-control__label-mark--checkbox {
+      border-color: $color-primary-light;
+      background-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    }
+
+    &:active + .form-control__label-mark--checkbox {
+      border-color: $color-primary;
+    }
+
+    & + .form-control__label-mark--radio {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    &:hover + .form-control__label-mark--radio {
+      border-color: $color-primary-light;
+    }
+
+    &:checked:hover + .form-control__label-mark--radio {
+      border-color: $color-primary;
+    }
+
+    &:focus + .form-control__label-mark--radio {
+      outline: none;
+      border-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    }
+
+    &:checked + .form-control__label-mark--radio {
+      border-color: $color-primary-light;
+      background-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    }
+
+    &:active + .form-control__label-mark--radio {
+      border-color: $color-primary;
+    }
   }
 
   &__input-range {
@@ -688,12 +752,32 @@ body {
     border: 1px solid $color-primary;
     background-color: transparent;
 
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
     -moz-appearance: textfield;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       appearance: none;
       margin: 0;
+    }
+
+    &:hover {
+      border-color: $color-primary-light;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &:focus,
+    .form-control:focus-within {
+      outline: none;
+      border-color: $color-accent;
+      background-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    }
+
+    &:active {
+      background-color: rgba($color-primary, 0.5);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
     }
   }
 }
