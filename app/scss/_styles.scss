@@ -2221,6 +2221,13 @@
     padding-inline: 33px;
   }
 
+  &__slider {
+    @media (min-width: 681px) {
+      max-width: 100%;
+      padding-inline: 0;
+    }
+  }
+
   &__slider-buttons {
     @media (min-width: 681px) {
       display: none;
@@ -2233,9 +2240,30 @@
     @include flex-center;
     width: 36px;
     height: 36px;
+    border: $border transparent;
+    border-radius: 50%;
+    background-color: transparent;
     z-index: 10;
     cursor: pointer;
     transform: translateY(-130%);
+
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+    @include hover-effect {
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
+    }
   }
 
   &__slider-button--prev {
@@ -2261,6 +2289,7 @@
 
     @media (max-width: 680px) {
       display: flex;
+      gap: 0;
     }
   }
 
@@ -2306,38 +2335,7 @@
       max-width: 320px;
       aspect-ratio: 320/470;
     }
-
-    /*@include laptop-m {
-      max-width: none;
-      height: 100%;
-      object-fit: cover;
-    }*/
   }
-
-  /*&__media {
-    display: flex;
-    gap: 20px;
-
-    @include desktop-m {
-      flex-direction: column-reverse;
-      row-gap: 42px;
-    }
-  }
-
-  &__media img {
-    height: auto;
-  }
-
-  &__media-small {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-
-    @include desktop-m {
-      flex-direction: row;
-      column-gap: 42px;
-    }
-  }*/
 
   &__info {
     display: flex;
@@ -2528,11 +2526,30 @@
     @include flex-center;
     width: 36px;
     height: 36px;
+    border: $border transparent;
+    border-radius: 50%;
+    background-color: transparent;
     z-index: 10;
     cursor: pointer;
     transform: translateY(-130%);
 
-    /* @include pseudo-button($display: flex, $border-radius: 50%);*/
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+    @include hover-effect {
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+    }
+
+    @include focus-visible {
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+      outline: none;
+    }
+
+    @include active {
+      color: $color-primary-light;
+      scale: 0.9;
+    }
   }
 
   &__slider-button--prev {
