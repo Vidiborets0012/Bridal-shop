@@ -80,46 +80,6 @@
     }
   }
 
-  /*&__burger-menu {
-    display: none;
-    padding: 4px;
-    margin: -4px;
-    color: $color-primary;
-    border: $border transparent;
-    border-radius: 3px;
-    background-color: transparent;
-    cursor: pointer;
-
-    transition: color 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
-
-    @include laptop-m {
-      position: relative;
-      display: inline-flex;
-      z-index: 10;
-    }
-
-    @include hover-effect {
-      scale: 1.25;
-      color: $color-primary-light;
-      background-color: $color-primary;
-      border-color: $color-primary;
-    }
-
-    @include focus-visible {
-      scale: 1.25;
-      color: $color-primary-light;
-      background-color: $color-primary;
-      border-color: $color-primary;
-      outline: none;
-    }
-
-    @include active {
-      color: $color-primary;
-      scale: 0.9;
-      color: currentColor;
-    }
-  }*/
-
   .burger-menu {
     display: none;
     flex-direction: column;
@@ -147,7 +107,7 @@
     @include laptop-m {
       position: relative;
       display: flex;
-      z-index: 10;
+      z-index: 21;
     }
 
     &__bar {
@@ -212,7 +172,7 @@
       padding: 100px 0 100px;
       text-align: center;
       background-color: $color-primary-light;
-      z-index: 5;
+      z-index: 20;
       opacity: 0;
       transform: translateY(-200%);
 
@@ -2529,7 +2489,7 @@
     border: $border transparent;
     border-radius: 50%;
     background-color: transparent;
-    z-index: 10;
+    z-index: 9;
     cursor: pointer;
     transform: translateY(-130%);
 
