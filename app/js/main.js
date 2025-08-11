@@ -267,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bodyElement = document.body;
 
   function toggleMenu(open) {
+    if (!burgerMenuButton || !menuContainer) return;
+
     if (open) {
       burgerMenuButton.classList.add('is-active');
       menuContainer.classList.add('is-active');
@@ -284,31 +286,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  burgerMenuButton.addEventListener('click', e => {
-    e.stopPropagation();
-    toggleMenu(!menuContainer.classList.contains('is-active'));
-  });
+  if (burgerMenuButton && menuContainer) {
+    burgerMenuButton.addEventListener('click', e => {
+      e.stopPropagation();
+      toggleMenu(!menuContainer.classList.contains('is-active'));
+    });
 
-  menuContainer.addEventListener('click', e => {
-    const isLink = e.target.tagName === 'A' || e.target.closest('a');
-    if (!isLink) toggleMenu(false);
-  });
+    menuContainer.addEventListener('click', e => {
+      const isLink = e.target.tagName === 'A' || e.target.closest('a');
+      if (!isLink) toggleMenu(false);
+    });
 
-  document.addEventListener('click', e => {
-    if (
-      menuContainer.classList.contains('is-active') &&
-      !menuContainer.contains(e.target) &&
-      !burgerMenuButton.contains(e.target)
-    ) {
-      toggleMenu(false);
-    }
-  });
+    document.addEventListener('click', e => {
+      if (
+        menuContainer.classList.contains('is-active') &&
+        !menuContainer.contains(e.target) &&
+        !burgerMenuButton.contains(e.target)
+      ) {
+        toggleMenu(false);
+      }
+    });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && menuContainer.classList.contains('is-active')) {
-      toggleMenu(false);
-    }
-  });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && menuContainer.classList.contains('is-active')) {
+        toggleMenu(false);
+      }
+    });
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -318,11 +322,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtnModal = document.querySelector('.close-modal');
 
   function openModal() {
+    if (!modal) return;
+
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
   }
 
   function closeModal() {
+    if (!modal) return;
+
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
   }
@@ -331,8 +339,13 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay.addEventListener('click', closeModal);
   }
 
-  openBtnModal.addEventListener('click', openModal);
-  closeBtnModal.addEventListener('click', closeModal);
+  if (openBtnModal) {
+    openBtnModal.addEventListener('click', openModal);
+  }
+
+  if (closeBtnModal) {
+    closeBtnModal.addEventListener('click', closeModal);
+  }
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
@@ -346,11 +359,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtnPopup = document.querySelector('.close-popup');
 
   function openPopup() {
+    if (!popup) return;
+
     popup.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
   }
 
   function closePopup() {
+    if (!popup) return;
+
     popup.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
   }
@@ -359,11 +376,16 @@ document.addEventListener('DOMContentLoaded', () => {
     popupOverlay.addEventListener('click', closePopup);
   }
 
-  openBtnPopup.addEventListener('click', openPopup);
-  closeBtnPopup.addEventListener('click', closePopup);
+  if (openBtnPopup) {
+    openBtnPopup.addEventListener('click', openPopup);
+  }
+
+  if (closeBtnPopup) {
+    closeBtnPopup.addEventListener('click', closePopup);
+  }
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && popup.getAttribute('aria-hidden') === 'false') {
+    if (popup && e.key === 'Escape' && popup.getAttribute('aria-hidden') === 'false') {
       closePopup();
     }
   });
@@ -371,57 +393,65 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewModeButtons = document.querySelectorAll('.view-mode__btn');
   const viewModeContainer = document.querySelector('.cards-list');
 
-  viewModeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      viewModeButtons.forEach(b => {
-        b.setAttribute('aria-pressed', 'false');
+  if (viewModeButtons.length && viewModeContainer) {
+    viewModeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        viewModeButtons.forEach(b => {
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.setAttribute('aria-pressed', 'true');
+
+        const mode = btn.dataset.viewMode;
+
+        viewModeContainer.classList.remove('cards-list--grid', 'cards-list--line');
+
+        if (mode === 'grid') {
+          viewModeContainer.classList.add('cards-list--grid');
+        } else if (mode === 'line') {
+          viewModeContainer.classList.add('cards-list--line');
+        }
       });
-      btn.setAttribute('aria-pressed', 'true');
-
-      const mode = btn.dataset.viewMode;
-
-      viewModeContainer.classList.remove('cards-list--grid', 'cards-list--line');
-
-      if (mode === 'grid') {
-        viewModeContainer.classList.add('cards-list--grid');
-      } else if (mode === 'line') {
-        viewModeContainer.classList.add('cards-list--line');
-      }
     });
-  });
+  }
 
   const rangeSlider = document.querySelector('.form-control__range-slider');
   const rangeMin = document.querySelector('.form-control__input-min');
   const rangeMax = document.querySelector('.form-control__input-max');
 
-  noUiSlider.create(rangeSlider, {
-    start: [300, 3000],
-    step: 100,
-    range: {
-      min: 300,
-      max: 3000,
-    },
-    format: {
-      to: value => Math.round(value),
-      from: value => Number(value),
-    },
-  });
+  if (rangeSlider && typeof noUiSlider !== 'undefined') {
+    noUiSlider.create(rangeSlider, {
+      start: [300, 3000],
+      step: 100,
+      range: {
+        min: 300,
+        max: 3000,
+      },
+      format: {
+        to: value => Math.round(value),
+        from: value => Number(value),
+      },
+    });
 
-  rangeSlider.noUiSlider.on('update', (values, handle) => {
-    if (handle === 0) {
-      rangeMin.value = values[0];
-    } else {
-      rangeMax.value = values[1];
+    rangeSlider.noUiSlider.on('update', (values, handle) => {
+      if (handle === 0 && rangeMin) {
+        rangeMin.value = values[0];
+      } else if (handle === 1 && rangeMax) {
+        rangeMax.value = values[1];
+      }
+    });
+
+    if (rangeMin) {
+      rangeMin.addEventListener('change', () => {
+        rangeSlider.noUiSlider.set([rangeMin.value, null]);
+      });
     }
-  });
 
-  rangeMin.addEventListener('change', () => {
-    rangeSlider.noUiSlider.set([rangeMin.value, null]);
-  });
-
-  rangeMax.addEventListener('change', () => {
-    rangeSlider.noUiSlider.set([null, rangeMax.value]);
-  });
+    if (rangeMax) {
+      rangeMax.addEventListener('change', () => {
+        rangeSlider.noUiSlider.set([null, rangeMax.value]);
+      });
+    }
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
