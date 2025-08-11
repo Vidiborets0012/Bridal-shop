@@ -909,8 +909,10 @@ body {
       position: relative;
       background-color: $color-light;
       z-index: 101;
-      left: 55px;
-      top: 100px;
+      // left: 55px;
+      // top: 100px;
+      left: 0;
+      top: 0;
       overflow: auto;
     }
   }
