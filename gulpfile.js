@@ -98,7 +98,7 @@ function watching() {
 }
 
 function cleanDist() {
-  return src('dist').pipe(clean());
+  return src('dist', { allowEmpty: true }).pipe(clean());
 }
 
 function building() {
